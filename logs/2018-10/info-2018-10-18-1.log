@@ -1,0 +1,179 @@
+2018-10-18 10:50:39.139 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.6.Final}
+2018-10-18 10:50:39.145 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2018-10-18 10:50:39.605 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2018-10-18 10:50:40.660 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-10-18 10:50:40.672 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/zy_rims?useSSL=false]
+2018-10-18 10:50:40.672 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {user=root, password=root}
+2018-10-18 10:50:40.672 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2018-10-18 10:50:40.675 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-10-18 10:50:40.834 [main] WARN  org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator - HHH000342: Could not obtain connection to query metadata : null
+2018-10-18 10:50:40.850 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2018-10-18 10:50:40.880 [main] INFO  org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl - HHH000422: Disabling contextual LOB creation as connection was null
+2018-10-18 10:50:40.886 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 08001
+2018-10-18 10:50:40.886 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper - Public Key Retrieval is not allowed
+2018-10-18 10:51:29.412 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.6.Final}
+2018-10-18 10:51:29.413 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2018-10-18 10:51:29.762 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2018-10-18 10:51:30.805 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-10-18 10:51:30.815 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/zy_rims?useSSL=false]
+2018-10-18 10:51:30.815 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {user=root, password=root}
+2018-10-18 10:51:30.815 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2018-10-18 10:51:30.817 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-10-18 10:51:30.946 [main] WARN  org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator - HHH000342: Could not obtain connection to query metadata : null
+2018-10-18 10:51:30.960 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2018-10-18 10:51:30.975 [main] INFO  org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl - HHH000422: Disabling contextual LOB creation as connection was null
+2018-10-18 10:51:30.979 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 08001
+2018-10-18 10:51:30.979 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper - Public Key Retrieval is not allowed
+2018-10-18 10:53:40.883 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.6.Final}
+2018-10-18 10:53:40.885 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2018-10-18 10:53:41.220 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2018-10-18 10:53:42.423 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-10-18 10:53:42.428 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/zy_rims?useSSL=false]
+2018-10-18 10:53:42.428 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {user=root, password=root}
+2018-10-18 10:53:42.428 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2018-10-18 10:53:42.433 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-10-18 10:53:42.589 [main] WARN  org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator - HHH000342: Could not obtain connection to query metadata : null
+2018-10-18 10:53:42.604 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2018-10-18 10:53:42.626 [main] INFO  org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl - HHH000422: Disabling contextual LOB creation as connection was null
+2018-10-18 10:53:42.637 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 08001
+2018-10-18 10:53:42.637 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper - Public Key Retrieval is not allowed
+2018-10-18 10:54:12.946 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.6.Final}
+2018-10-18 10:54:12.948 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2018-10-18 10:54:13.275 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2018-10-18 10:54:14.404 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-10-18 10:54:14.409 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/zy_rims?useSSL=false]
+2018-10-18 10:54:14.409 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {user=root, password=root}
+2018-10-18 10:54:14.410 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2018-10-18 10:54:14.413 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-10-18 10:54:14.550 [main] WARN  org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator - HHH000342: Could not obtain connection to query metadata : null
+2018-10-18 10:54:14.564 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2018-10-18 10:54:14.585 [main] INFO  org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl - HHH000422: Disabling contextual LOB creation as connection was null
+2018-10-18 10:54:14.595 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 08001
+2018-10-18 10:54:14.595 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper - Public Key Retrieval is not allowed
+2018-10-18 10:59:45.126 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.6.Final}
+2018-10-18 10:59:45.128 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2018-10-18 10:59:45.440 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2018-10-18 10:59:46.533 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-10-18 10:59:46.538 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/zy_rims?useSSL=false]
+2018-10-18 10:59:46.539 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {user=root, password=root}
+2018-10-18 10:59:46.539 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2018-10-18 10:59:46.542 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-10-18 10:59:46.679 [main] WARN  org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator - HHH000342: Could not obtain connection to query metadata : null
+2018-10-18 10:59:46.694 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2018-10-18 10:59:46.714 [main] INFO  org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl - HHH000422: Disabling contextual LOB creation as connection was null
+2018-10-18 10:59:46.723 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 01S00
+2018-10-18 10:59:46.724 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper - The server time zone value 'ÖÐ¹ú±ê×¼Ê±¼ä' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+2018-10-18 11:00:44.513 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.6.Final}
+2018-10-18 11:00:44.515 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2018-10-18 11:00:44.818 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2018-10-18 11:00:45.918 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-10-18 11:00:45.923 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/zy_rims?useSSL=false]
+2018-10-18 11:00:45.923 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {user=root, password=root}
+2018-10-18 11:00:45.923 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2018-10-18 11:00:45.928 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-10-18 11:00:46.056 [main] WARN  org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator - HHH000342: Could not obtain connection to query metadata : null
+2018-10-18 11:00:46.070 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2018-10-18 11:00:46.089 [main] INFO  org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl - HHH000422: Disabling contextual LOB creation as connection was null
+2018-10-18 11:00:46.099 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 01S00
+2018-10-18 11:00:46.099 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper - The server time zone value 'ÖÐ¹ú±ê×¼Ê±¼ä' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+2018-10-18 11:01:21.067 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.6.Final}
+2018-10-18 11:01:21.069 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2018-10-18 11:01:21.371 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2018-10-18 11:01:31.311 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.6.Final}
+2018-10-18 11:01:31.312 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2018-10-18 11:01:31.636 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2018-10-18 11:01:32.715 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-10-18 11:01:32.721 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/zy_rims?useSSL=false]
+2018-10-18 11:01:32.721 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {user=root, password=root}
+2018-10-18 11:01:32.721 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2018-10-18 11:01:32.724 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-10-18 11:01:32.851 [main] WARN  org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator - HHH000342: Could not obtain connection to query metadata : null
+2018-10-18 11:01:32.866 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2018-10-18 11:01:32.884 [main] INFO  org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl - HHH000422: Disabling contextual LOB creation as connection was null
+2018-10-18 11:01:32.895 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 01S00
+2018-10-18 11:01:32.895 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper - The server time zone value 'ÖÐ¹ú±ê×¼Ê±¼ä' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+2018-10-18 11:03:39.397 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.6.Final}
+2018-10-18 11:03:39.398 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2018-10-18 11:03:39.720 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2018-10-18 11:03:40.832 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-10-18 11:03:40.837 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/zy_rims?useSSL=false]
+2018-10-18 11:03:40.837 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {user=root, password=root}
+2018-10-18 11:03:40.837 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2018-10-18 11:03:40.840 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-10-18 11:03:40.986 [main] WARN  org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator - HHH000342: Could not obtain connection to query metadata : null
+2018-10-18 11:03:40.998 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2018-10-18 11:03:41.015 [main] INFO  org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl - HHH000422: Disabling contextual LOB creation as connection was null
+2018-10-18 11:03:41.023 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 01S00
+2018-10-18 11:03:41.023 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper - The server time zone value 'ÖÐ¹ú±ê×¼Ê±¼ä' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+2018-10-18 11:04:36.173 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.6.Final}
+2018-10-18 11:04:36.175 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2018-10-18 11:04:36.507 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2018-10-18 11:04:37.679 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-10-18 11:04:37.684 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/zy_rims]
+2018-10-18 11:04:37.684 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {user=root, password=root}
+2018-10-18 11:04:37.685 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2018-10-18 11:04:37.688 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-10-18 11:04:38.422 [main] WARN  org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator - HHH000342: Could not obtain connection to query metadata : null
+2018-10-18 11:04:38.437 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2018-10-18 11:04:38.455 [main] INFO  org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl - HHH000422: Disabling contextual LOB creation as connection was null
+2018-10-18 11:04:38.464 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 01S00
+2018-10-18 11:04:38.464 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper - The server time zone value 'ÖÐ¹ú±ê×¼Ê±¼ä' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+2018-10-18 11:04:56.817 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.6.Final}
+2018-10-18 11:04:56.819 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2018-10-18 11:04:57.147 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2018-10-18 11:04:58.254 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-10-18 11:04:58.261 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/zy_rims?useSSL=false]
+2018-10-18 11:04:58.261 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {user=root, password=root}
+2018-10-18 11:04:58.261 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2018-10-18 11:04:58.264 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-10-18 11:04:58.405 [main] WARN  org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator - HHH000342: Could not obtain connection to query metadata : null
+2018-10-18 11:04:58.417 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2018-10-18 11:04:58.433 [main] INFO  org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl - HHH000422: Disabling contextual LOB creation as connection was null
+2018-10-18 11:04:58.443 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 01S00
+2018-10-18 11:04:58.444 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper - The server time zone value 'ÖÐ¹ú±ê×¼Ê±¼ä' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+2018-10-18 11:07:40.720 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.6.Final}
+2018-10-18 11:07:40.722 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2018-10-18 11:07:41.045 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2018-10-18 11:07:42.147 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-10-18 11:07:42.152 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/zy_rims?useSSL=false&serverTimezone=UTC]
+2018-10-18 11:07:42.152 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {user=root, password=root}
+2018-10-18 11:07:42.152 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2018-10-18 11:07:42.156 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-10-18 11:07:42.303 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2018-10-18 11:07:43.012 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5f2bd6d9] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2018-10-18 11:16:09.914 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.6.Final}
+2018-10-18 11:16:09.916 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2018-10-18 11:16:10.238 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2018-10-18 11:16:11.322 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-10-18 11:16:11.326 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/zy_rims?useSSL=false]
+2018-10-18 11:16:11.327 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {user=root, password=root}
+2018-10-18 11:16:11.327 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2018-10-18 11:16:11.330 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-10-18 11:16:11.457 [main] WARN  org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator - HHH000342: Could not obtain connection to query metadata : null
+2018-10-18 11:16:11.468 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2018-10-18 11:16:11.483 [main] INFO  org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl - HHH000422: Disabling contextual LOB creation as connection was null
+2018-10-18 11:16:11.491 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 01S00
+2018-10-18 11:16:11.491 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper - The server time zone value 'ÖÐ¹ú±ê×¼Ê±¼ä' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+2018-10-18 11:17:53.493 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.6.Final}
+2018-10-18 11:17:53.495 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2018-10-18 11:17:53.827 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2018-10-18 11:17:54.938 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-10-18 11:17:54.944 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/zy_rims?useSSL=false]
+2018-10-18 11:17:54.944 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {user=root, password=root}
+2018-10-18 11:17:54.945 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2018-10-18 11:17:54.948 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-10-18 11:17:55.073 [main] WARN  org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator - HHH000342: Could not obtain connection to query metadata : null
+2018-10-18 11:17:55.089 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2018-10-18 11:17:55.111 [main] INFO  org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl - HHH000422: Disabling contextual LOB creation as connection was null
+2018-10-18 11:17:55.121 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 08001
+2018-10-18 11:17:55.121 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper - Public Key Retrieval is not allowed
+2018-10-18 11:18:34.027 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.6.Final}
+2018-10-18 11:18:34.029 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2018-10-18 11:18:34.356 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2018-10-18 11:18:35.442 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-10-18 11:18:35.446 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/zy_rims?useSSL=false&serverTimezone=UTC]
+2018-10-18 11:18:35.447 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {user=root, password=root}
+2018-10-18 11:18:35.447 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2018-10-18 11:18:35.450 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-10-18 11:18:35.608 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2018-10-18 11:18:36.294 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4cc36c19] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.

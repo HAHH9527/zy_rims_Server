@@ -1,0 +1,1 @@
+2018-10-18 11:00:46.099 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper - The server time zone value 'ÖÐ¹ú±ê×¼Ê±¼ä' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
