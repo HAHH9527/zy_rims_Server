@@ -1,13 +1,9 @@
 package cn.hnkjxy.zy.rims.bean;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.Objects;
 
-/**
- * @author 10248
- */
 @Entity
 @Table(name = "t_order", schema = "zy_rims")
 public class TOrderEntity {
@@ -17,9 +13,9 @@ public class TOrderEntity {
     private Timestamp useTime;
     private Timestamp endTime;
     private String dishList;
-    private BigDecimal orderPrice;
-    private BigDecimal orderDiscount;
-    private BigDecimal orderPriceReal;
+    private Double orderPrice;
+    private Double orderDiscount;
+    private Double orderPriceReal;
     private String orderOther;
 
     @Id
@@ -84,31 +80,31 @@ public class TOrderEntity {
 
     @Basic
     @Column(name = "order_price")
-    public BigDecimal getOrderPrice() {
+    public Double getOrderPrice() {
         return orderPrice;
     }
 
-    public void setOrderPrice(BigDecimal orderPrice) {
+    public void setOrderPrice(Double orderPrice) {
         this.orderPrice = orderPrice;
     }
 
     @Basic
     @Column(name = "order_discount")
-    public BigDecimal getOrderDiscount() {
+    public Double getOrderDiscount() {
         return orderDiscount;
     }
 
-    public void setOrderDiscount(BigDecimal orderDiscount) {
+    public void setOrderDiscount(Double orderDiscount) {
         this.orderDiscount = orderDiscount;
     }
 
     @Basic
     @Column(name = "order_price_real")
-    public BigDecimal getOrderPriceReal() {
+    public Double getOrderPriceReal() {
         return orderPriceReal;
     }
 
-    public void setOrderPriceReal(BigDecimal orderPriceReal) {
+    public void setOrderPriceReal(Double orderPriceReal) {
         this.orderPriceReal = orderPriceReal;
     }
 
@@ -133,6 +129,7 @@ public class TOrderEntity {
         TOrderEntity that = (TOrderEntity) o;
         return orderId == that.orderId &&
                 Objects.equals(tableId, that.tableId) &&
+                Objects.equals(orderStatus, that.orderStatus) &&
                 Objects.equals(useTime, that.useTime) &&
                 Objects.equals(endTime, that.endTime) &&
                 Objects.equals(dishList, that.dishList) &&
@@ -144,6 +141,6 @@ public class TOrderEntity {
 
     @Override
     public int hashCode() {
-        return Objects.hash(orderId, tableId, useTime, endTime, dishList, orderPrice, orderDiscount, orderPriceReal, orderOther);
+        return Objects.hash(orderId, tableId, orderStatus, useTime, endTime, dishList, orderPrice, orderDiscount, orderPriceReal, orderOther);
     }
 }

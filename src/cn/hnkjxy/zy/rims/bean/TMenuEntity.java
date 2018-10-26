@@ -1,18 +1,14 @@
 package cn.hnkjxy.zy.rims.bean;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
 import java.util.Objects;
 
-/**
- * @author 10248
- */
 @Entity
 @Table(name = "t_menu", schema = "zy_rims")
 public class TMenuEntity {
     private int dishId;
     private String dishName;
-    private BigDecimal dishPrice;
+    private Double dishPrice;
     private String dishImgSrc;
     private String dishImgName;
     private String dishIntroduced;
@@ -39,11 +35,11 @@ public class TMenuEntity {
 
     @Basic
     @Column(name = "dish_price")
-    public BigDecimal getDishPrice() {
+    public Double getDishPrice() {
         return dishPrice;
     }
 
-    public void setDishPrice(BigDecimal dishPrice) {
+    public void setDishPrice(Double dishPrice) {
         this.dishPrice = dishPrice;
     }
 
@@ -90,11 +86,12 @@ public class TMenuEntity {
                 Objects.equals(dishName, that.dishName) &&
                 Objects.equals(dishPrice, that.dishPrice) &&
                 Objects.equals(dishImgSrc, that.dishImgSrc) &&
+                Objects.equals(dishImgName, that.dishImgName) &&
                 Objects.equals(dishIntroduced, that.dishIntroduced);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(dishId, dishName, dishPrice, dishImgSrc, dishIntroduced);
+        return Objects.hash(dishId, dishName, dishPrice, dishImgSrc, dishImgName, dishIntroduced);
     }
 }
