@@ -6,6 +6,9 @@ import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
 
+/**
+ * @author 10248
+ */
 public class StoreMenuData extends HibernateUtils {
 
     @Test
@@ -19,7 +22,7 @@ public class StoreMenuData extends HibernateUtils {
 
         TMenuEntity menuEntity = new TMenuEntity();
         menuEntity.setDishName("炒肉");
-        menuEntity.setDishPrice(new BigDecimal(28));
+        menuEntity.setDishPrice(28.00);
 
         //持久化对象
         session.persist(menuEntity);
