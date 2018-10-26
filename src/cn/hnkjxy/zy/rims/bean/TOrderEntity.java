@@ -13,6 +13,7 @@ import java.util.Objects;
 public class TOrderEntity {
     private int orderId;
     private String tableId;
+    private String orderStatus;
     private Timestamp useTime;
     private Timestamp endTime;
     private String dishList;
@@ -39,6 +40,16 @@ public class TOrderEntity {
 
     public void setTableId(String tableId) {
         this.tableId = tableId;
+    }
+
+    @Basic
+    @Column(name = "order_status")
+    public String getOrderStatus() {
+        return orderStatus;
+    }
+
+    public void setOrderStatus(String orderStatus) {
+        this.orderStatus = orderStatus;
     }
 
     @Basic
