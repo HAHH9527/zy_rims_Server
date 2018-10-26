@@ -1,6 +1,6 @@
 package cn.hnkjxy.zy.rims.bean.json;
 
-public class OrderDishList_json {
+public class OrderDishListJson {
     private int[] dishList;
 
     public int[] getDishList() {

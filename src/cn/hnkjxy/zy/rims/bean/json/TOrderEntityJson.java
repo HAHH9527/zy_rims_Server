@@ -5,7 +5,7 @@ import cn.hnkjxy.zy.rims.bean.TOrderEntity;
 
 import java.util.List;
 
-public class TOrderEntity_json extends TOrderEntity {
+public class TOrderEntityJson extends TOrderEntity {
     private List<TMenuEntity> dishListI;
 
     public List<TMenuEntity> getDishListI() {
