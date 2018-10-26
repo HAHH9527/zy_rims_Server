@@ -9,20 +9,19 @@ import org.hibernate.cfg.Configuration;
  * @author 10248
  */
 public class HibernateUtils {
-    protected Configuration configuration;
+    private Configuration configuration;
     protected SessionFactory factory;
     protected Session session;
     protected Transaction transaction;
 
-    protected void startDBManager() {
+    protected void openSession() {
         configuration = new Configuration();
 
         //设置配置文件
         configuration.configure("hibernate.cfg.xml");
 
         //创建session工厂
-        factory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
-//        factory = configuration.buildSessionFactory();
+        factory = configuration.buildSessionFactory();
 
         //创建session对象
         session = factory.openSession();

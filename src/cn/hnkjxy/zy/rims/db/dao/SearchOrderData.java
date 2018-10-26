@@ -11,20 +11,7 @@ public class SearchOrderData extends HibernateUtils {
     @Test
     public void testSearchOrderData() {
         //初始化
-//        Configuration configuration = new Configuration();
-//        //设置配置文件
-//        configuration.configure("hibernate.cfg.xml");
-//
-//        //创建session工厂
-//        SessionFactory factory = configuration.buildSessionFactory();
-//
-//        //创建session对象
-//        Session session = factory.openSession();
-//
-//        //创建事务对象
-//        Transaction transaction = session.beginTransaction();
-
-        startDBManager();
+        openSession();
 
         transaction = session.beginTransaction();
 
@@ -40,7 +27,6 @@ public class SearchOrderData extends HibernateUtils {
             System.out.println(tOrderEntity.getDishList());
         });
 
-//        session.close();
         closeSession();
 
         System.out.println("successfully search");

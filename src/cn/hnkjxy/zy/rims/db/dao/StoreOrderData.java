@@ -2,29 +2,14 @@ package cn.hnkjxy.zy.rims.db.dao;
 
 import cn.hnkjxy.zy.rims.bean.TOrderEntity;
 import cn.hnkjxy.zy.rims.bean.json.OrderDishList_json;
+import cn.hnkjxy.zy.rims.db.HibernateUtils;
 import com.google.gson.Gson;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
 import org.junit.jupiter.api.Test;
 
-public class StoreOrderData {
+public class StoreOrderData extends HibernateUtils {
     @Test
     public void testStoreOrderData() {
-        Configuration configuration = new Configuration();
-        //设置配置文件
-        configuration.configure("hibernate.cfg.xml");
-
-        //创建session工厂
-        SessionFactory factory = configuration.buildSessionFactory();
-
-        //创建session对象
-        Session session = factory.openSession();
-
-        //创建事务对象
-        Transaction transaction = session.beginTransaction();
-//        startDBManager();
+        openSession();
 
         TOrderEntity orderEntity = new TOrderEntity();
         orderEntity.setDishList(creatJson());
@@ -36,8 +21,7 @@ public class StoreOrderData {
         transaction.commit();
 
         //关闭session
-//        closeSession();
-        session.close();
+        closeSession();
 
         System.out.println("successfully saved");
     }

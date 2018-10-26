@@ -12,7 +12,7 @@ public class StoreMenuData extends HibernateUtils {
     public void testStoreMenuData() {
 
         //初始化
-        startDBManager();
+        openSession();
 
         //创建事务对象
         transaction = session.beginTransaction();
