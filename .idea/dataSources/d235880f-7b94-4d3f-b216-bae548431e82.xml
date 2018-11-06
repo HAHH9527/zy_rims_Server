@@ -1104,7 +1104,7 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="277" parent="6" name="t_menu"/>
+    <table id="277" parent="6" name="t_dish"/>
     <table id="278" parent="6" name="t_order"/>
     <column id="279" parent="277" name="dish_id">
       <Position>1</Position>
