@@ -1,18 +1,16 @@
-package cn.hnkjxy.zy.rims.db.dao;
+package cn.hnkjxy.zy.rims.db.dao.test;
 
-import cn.hnkjxy.zy.rims.bean.TMenuEntity;
+import cn.hnkjxy.zy.rims.bean.dbEntity.TDishEntity;
 import cn.hnkjxy.zy.rims.db.HibernateUtils;
 import org.junit.jupiter.api.Test;
-
-import java.math.BigDecimal;
 
 /**
  * @author 10248
  */
-public class StoreMenuData extends HibernateUtils {
+public class StoreDishData extends HibernateUtils {
 
     @Test
-    public void testStoreMenuData() {
+    public void testStoreDishData() {
 
         //初始化
         openSession();
@@ -20,12 +18,12 @@ public class StoreMenuData extends HibernateUtils {
         //创建事务对象
         transaction = session.beginTransaction();
 
-        TMenuEntity menuEntity = new TMenuEntity();
-        menuEntity.setDishName("炒肉");
-        menuEntity.setDishPrice(28.00);
+        TDishEntity dishEntity = new TDishEntity();
+        dishEntity.setDishName("炒肉");
+        dishEntity.setDishPrice(28.00);
 
         //持久化对象
-        session.persist(menuEntity);
+        session.persist(dishEntity);
 
         //提交事务
         transaction.commit();
