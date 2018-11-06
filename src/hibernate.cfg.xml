@@ -4,7 +4,8 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <property name="connection.url">jdbc:mysql://localhost:3306/zy_rims?useSSL=false&amp;serverTimezone=UTC</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/zy_rims?serverTimezone=UTC&amp;useSSL=false
+        </property>
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
         <property name="connection.username">root</property>
         <property name="connection.password">root</property>
@@ -15,9 +16,9 @@
         <!-- DB schema will be updated if needed -->
         <property name="hbm2ddl.auto">update</property>
 
-        <mapping class="cn.hnkjxy.zy.rims.bean.TMenuEntity"/>
-        <mapping class="cn.hnkjxy.zy.rims.bean.TOrderEntity"/>
-        <mapping resource="cn/hnkjxy/zy/rims/bean/TMenuEntity.hbm.xml"/>
-        <mapping resource="cn/hnkjxy/zy/rims/bean/TOrderEntity.hbm.xml"/>
+        <mapping class="cn.hnkjxy.zy.rims.bean.dbEntity.TDishEntity"/>
+        <mapping class="cn.hnkjxy.zy.rims.bean.dbEntity.TOrderEntity"/>
+        <mapping resource="cn/hnkjxy/zy/rims/bean/dbEntity/TDishEntity.hbm.xml"/>
+        <mapping resource="cn/hnkjxy/zy/rims/bean/dbEntity/TOrderEntity.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>
