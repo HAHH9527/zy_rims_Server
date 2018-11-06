@@ -1,22 +1,17 @@
 package cn.hnkjxy.zy.rims.utils;
 
-import java.io.ByteArrayOutputStream;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
-
 import org.junit.jupiter.api.Test;
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
 
+import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
 /**
  * @author 10248
  */
-public class Base64Utils {
+public class ImageBase64Utils {
 
     @Test
     public void testBase64Utils() throws Exception {
@@ -26,15 +21,12 @@ public class Base64Utils {
         //在线图片地址
 //        String string = "http://bpic.588ku.com//element_origin_min_pic/17/03/03/7bf4480888f35addcf2ce942701c728a.jpg";
 
-        String str = Base64Utils.ImageToBase64ByLocal(url);
-
-//        String ste = Base64Utils.ImageToBase64ByOnline(string);
+        String str = ImageBase64Utils.ImageToBase64ByLocal(url);
 
         System.out.println(str);
 
-        Base64Utils.Base64ToImage(str, "./img/dish_img/test1.png");
+        ImageBase64Utils.Base64ToImage(str, "./img/dish_img/test1.png");
 
-//        Base64Utils.Base64ToImage(ste, "C:/Users/Administrator/Desktop/test2.jpg");
     }
 
     /**

@@ -4,7 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="cn.hnkjxy.zy.rims.bean.TOrderEntity" table="t_order" schema="zy_rims">
+    <class name="cn.hnkjxy.zy.rims.bean.dbEntity.TOrderEntity" table="t_order" schema="zy_rims">
         <id name="orderId" column="order_id"/>
         <property name="tableId" column="table_id"/>
         <property name="orderStatus" column="order_status"/>

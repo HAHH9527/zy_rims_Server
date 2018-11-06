@@ -1,18 +1,18 @@
 package cn.hnkjxy.zy.rims.bean.json;
 
-import cn.hnkjxy.zy.rims.bean.TMenuEntity;
-import cn.hnkjxy.zy.rims.bean.TOrderEntity;
+import cn.hnkjxy.zy.rims.bean.dbEntity.TDishEntity;
+import cn.hnkjxy.zy.rims.bean.dbEntity.TOrderEntity;
 
 import java.util.List;
 
 public class TOrderEntityJson extends TOrderEntity {
-    private List<TMenuEntity> dishListI;
+    private List<TDishEntity> dishListI;
 
-    public List<TMenuEntity> getDishListI() {
+    public List<TDishEntity> getDishListI() {
         return dishListI;
     }
 
-    public void setDishListI(List<TMenuEntity> dishListI) {
+    public void setDishListI(List<TDishEntity> dishListI) {
         this.dishListI = dishListI;
     }
 }

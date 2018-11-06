@@ -1,6 +1,6 @@
-package cn.hnkjxy.zy.rims.db.dao;
+package cn.hnkjxy.zy.rims.db.dao.test;
 
-import cn.hnkjxy.zy.rims.bean.TOrderEntity;
+import cn.hnkjxy.zy.rims.bean.dbEntity.TOrderEntity;
 import cn.hnkjxy.zy.rims.bean.json.OrderDishListJson;
 import cn.hnkjxy.zy.rims.db.HibernateUtils;
 import com.google.gson.Gson;
@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
  * @author 10248
  */
 public class StoreOrderData extends HibernateUtils {
+
     @Test
     public void testStoreOrderData() {
         openSession();

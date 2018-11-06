@@ -1,6 +1,6 @@
-package cn.hnkjxy.zy.rims.db.dao;
+package cn.hnkjxy.zy.rims.db.dao.test;
 
-import cn.hnkjxy.zy.rims.bean.TOrderEntity;
+import cn.hnkjxy.zy.rims.bean.dbEntity.TOrderEntity;
 import cn.hnkjxy.zy.rims.db.HibernateUtils;
 import org.hibernate.query.Query;
 import org.junit.jupiter.api.Test;
@@ -17,7 +17,7 @@ public class SearchOrderData extends HibernateUtils {
 
         Query<TOrderEntity> query = session.createQuery("from TOrderEntity where tableId=:i");
 
-        query.setParameter("i","A178");
+        query.setParameter("i", "A178");
 
         List<TOrderEntity> tOrderEntityList = query.list();
 

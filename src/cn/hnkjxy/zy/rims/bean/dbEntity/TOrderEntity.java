@@ -1,4 +1,4 @@
-package cn.hnkjxy.zy.rims.bean;
+package cn.hnkjxy.zy.rims.bean.dbEntity;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
