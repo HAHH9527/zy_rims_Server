@@ -14,7 +14,7 @@ import java.io.PrintWriter;
 /**
  * @author 10248
  */
-@WebServlet(name = "/CreateMenuServlet")
+@WebServlet(name = "CreateMenuServlet", urlPatterns = "/CreateMenuServlet")
 public class CreateMenuServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -25,6 +25,9 @@ public class CreateMenuServlet extends HttpServlet {
 
         InputStream inputStream = request.getInputStream();
         String bodyInfo = IOUtils.toString(inputStream, "utf-8");
+
+        System.out.println("收到请求");
+        System.out.println(bodyInfo);
 
         PrintWriter out = response.getWriter();
         out.write("入参信息：" + bodyInfo);
