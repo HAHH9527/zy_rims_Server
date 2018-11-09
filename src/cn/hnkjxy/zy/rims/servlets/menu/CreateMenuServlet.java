@@ -37,6 +37,8 @@ public class CreateMenuServlet extends HttpServlet {
         // 设置响应内容类型
         response.setContentType("text/html;charset=UTF-8");
 
+        System.out.println("收到get请求");
+
         PrintWriter out = response.getWriter();
         String title = "GET访问";
         // 处理中文
