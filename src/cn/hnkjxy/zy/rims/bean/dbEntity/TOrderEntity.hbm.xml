@@ -5,7 +5,9 @@
 <hibernate-mapping>
 
     <class name="cn.hnkjxy.zy.rims.bean.dbEntity.TOrderEntity" table="t_order" schema="zy_rims">
-        <id name="orderId" column="order_id"/>
+        <id name="orderId" column="order_id">
+            <generator class="identity"/>
+        </id>
         <property name="tableId" column="table_id"/>
         <property name="orderStatus" column="order_status"/>
         <property name="useTime" column="use_time"/>

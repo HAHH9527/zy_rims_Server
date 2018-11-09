@@ -5,7 +5,9 @@
 <hibernate-mapping>
 
     <class name="cn.hnkjxy.zy.rims.bean.dbEntity.TDishEntity" table="t_dish" schema="zy_rims">
-        <id name="dishId" column="dish_id"/>
+        <id name="dishId" column="dish_id">
+            <generator class="identity"/>
+        </id>
         <property name="dishName" column="dish_name"/>
         <property name="dishPrice" column="dish_price"/>
         <property name="dishImgSrc" column="dish_img_src"/>
