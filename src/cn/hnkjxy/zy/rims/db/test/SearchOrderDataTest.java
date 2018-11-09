@@ -1,4 +1,4 @@
-package cn.hnkjxy.zy.rims.db.dao.test;
+package cn.hnkjxy.zy.rims.db.test;
 
 import cn.hnkjxy.zy.rims.bean.dbEntity.TOrderEntity;
 import cn.hnkjxy.zy.rims.db.HibernateUtils;
@@ -7,13 +7,15 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-public class SearchOrderData extends HibernateUtils {
+/**
+ * @author 10248
+ */
+public class SearchOrderDataTest extends HibernateUtils {
     @Test
     public void testSearchOrderData() {
-        //初始化
-        openSession();
 
-        transaction = session.beginTransaction();
+        //初始化
+        initHibernate();
 
         Query<TOrderEntity> query = session.createQuery("from TOrderEntity where tableId=:i");
 
