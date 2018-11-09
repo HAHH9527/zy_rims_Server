@@ -14,7 +14,10 @@ public class HibernateUtils {
     protected Session session;
     protected Transaction transaction;
 
-    protected void openSession() {
+    /**
+     * 初始化
+     */
+    protected void initHibernate() {
         configuration = new Configuration();
 
         //设置配置文件
@@ -25,8 +28,31 @@ public class HibernateUtils {
 
         //创建session对象
         session = factory.openSession();
+
+        //创建事务对象
+        session.beginTransaction();
+
+        //获取事务对象
+        transaction = session.getTransaction();
     }
 
+    /**
+     * 提交事务
+     */
+    protected void commitTransaction() {
+        transaction.commit();
+    }
+
+    /**
+     * 回滚
+     */
+    protected void rollbackTransaction() {
+        transaction.rollback();
+    }
+
+    /**
+     * 关闭Session
+     */
     protected void closeSession() {
         //关闭session
         session.close();
