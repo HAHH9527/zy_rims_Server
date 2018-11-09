@@ -18,12 +18,20 @@ public interface DishImpl {
     int insertNewDish(TDishEntity newDish);
 
     /**
+     * 通过菜品id查找菜品
+     *
+     * @param dishId 菜品id
+     * @return 查询到的菜品数据
+     */
+    TDishEntity findDishById(int dishId);
+
+    /**
      * 通过菜品id更新菜品详情
      *
      * @param updateDish 菜品详情
      * @return 更新是否成功
      */
-    boolean updateMenuById(TDishEntity updateDish);
+    boolean updateDishById(TDishEntity updateDish);
 
     /**
      * 通过id删除菜品
@@ -31,7 +39,7 @@ public interface DishImpl {
      * @param dishId 菜品id
      * @return 删除是否成功
      */
-    boolean deleteMenuById(int dishId);
+    boolean deleteDishById(int dishId);
 
     /**
      * 获取所有的菜单
