@@ -1,4 +1,4 @@
-package cn.hnkjxy.zy.rims.utils;
+package cn.hnkjxy.zy.rims.service.utils;
 
 import org.junit.jupiter.api.Test;
 import sun.misc.BASE64Decoder;
@@ -33,7 +33,7 @@ public class ImageBase64Utils {
      * 本地图片转换成base64字符串
      *
      * @param imgFile 图片本地路径
-     * @return
+     * @return Base64字符串
      */
     public static String ImageToBase64ByLocal(String imgFile) {// 将图片文件转化为字节数组字符串，并对其进行Base64编码处理
 
