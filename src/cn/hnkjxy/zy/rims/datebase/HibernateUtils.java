@@ -1,4 +1,4 @@
-package cn.hnkjxy.zy.rims.db;
+package cn.hnkjxy.zy.rims.datebase;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

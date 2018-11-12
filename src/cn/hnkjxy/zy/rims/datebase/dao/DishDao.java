@@ -1,8 +1,8 @@
-package cn.hnkjxy.zy.rims.db.dao;
+package cn.hnkjxy.zy.rims.datebase.dao;
 
 import cn.hnkjxy.zy.rims.bean.dbEntity.TDishEntity;
-import cn.hnkjxy.zy.rims.db.HibernateUtils;
-import cn.hnkjxy.zy.rims.db.impl.DishImpl;
+import cn.hnkjxy.zy.rims.datebase.HibernateUtils;
+import cn.hnkjxy.zy.rims.datebase.impl.DishImpl;
 
 import java.util.List;
 
