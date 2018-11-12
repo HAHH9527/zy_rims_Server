@@ -53,9 +53,9 @@ public class HibernateUtils {
     /**
      * 关闭Session
      */
-    protected void closeSession() {
-        //关闭session
+    protected void finalclose() {
         session.close();
+        factory.close();
     }
 
 }
