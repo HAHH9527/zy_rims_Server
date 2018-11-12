@@ -25,7 +25,7 @@ public class DishDao extends HibernateUtils implements DishImpl {
             retId = -1;
             e.printStackTrace();
         } finally {
-            closeSession();
+            finalclose();
         }
 
         return retId;
@@ -33,7 +33,20 @@ public class DishDao extends HibernateUtils implements DishImpl {
 
     @Override
     public TDishEntity findDishById(int dishId) {
-        return null;
+        initHibernate();
+        TDishEntity dish;
+        try {
+            dish = session.get(TDishEntity.class, dishId);
+            commitTransaction();
+        } catch (Exception e) {
+            rollbackTransaction();
+            dish = null;
+            e.printStackTrace();
+        } finally {
+            finalclose();
+        }
+
+        return dish;
     }
 
     @Override
