@@ -27,6 +27,8 @@
       <root url="jar://$PROJECT_DIR$/lib/okhttp-3.11.0.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/okio-2.1.0.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/commons-io-2.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/cors-filter-2.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/java-property-utils-1.13.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$PROJECT_DIR$/lib/hibernate-core-5.3.6.Final-javadoc.jar!/" />
