@@ -1,4 +1,4 @@
-package cn.hnkjxy.zy.rims.servlets.menu;
+package cn.hnkjxy.zy.rims.service.servlets.menu;
 
 import org.apache.commons.io.IOUtils;
 
