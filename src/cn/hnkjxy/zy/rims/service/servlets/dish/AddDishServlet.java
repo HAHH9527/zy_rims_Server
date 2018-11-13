@@ -1,4 +1,4 @@
-package cn.hnkjxy.zy.rims.service.servlets.menu;
+package cn.hnkjxy.zy.rims.service.servlets.dish;
 
 import org.apache.commons.io.IOUtils;
 
@@ -13,8 +13,8 @@ import java.io.PrintWriter;
 /**
  * @author 10248
  */
-@WebServlet(name = "CreateMenuServlet", urlPatterns = "/CreateMenuServlet")
-public class CreateMenuServlet extends HttpServlet {
+@WebServlet(name = "AddDishServlet", urlPatterns = "/AddDish")
+public class AddDishServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         // 设置响应内容类型
@@ -25,7 +25,7 @@ public class CreateMenuServlet extends HttpServlet {
         InputStream inputStream = request.getInputStream();
         String bodyInfo = IOUtils.toString(inputStream, "utf-8");
 
-        System.out.println("收到请求");
+        System.out.println("收到AddDishPost请求");
         System.out.println(bodyInfo);
 
         PrintWriter out = response.getWriter();
@@ -36,8 +36,10 @@ public class CreateMenuServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         // 设置响应内容类型
         response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("utf-8");
+        response.setCharacterEncoding("utf-8");
 
-        System.out.println("收到get请求");
+        System.out.println("收到AddDishGet请求");
 
         PrintWriter out = response.getWriter();
         String title = "GET访问";
