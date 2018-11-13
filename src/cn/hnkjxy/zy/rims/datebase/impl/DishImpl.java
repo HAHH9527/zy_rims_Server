@@ -1,6 +1,6 @@
 package cn.hnkjxy.zy.rims.datebase.impl;
 
-import cn.hnkjxy.zy.rims.bean.dbEntity.TDishEntity;
+import cn.hnkjxy.zy.rims.bean.datebase.entity.TableDishEntity;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ public interface DishImpl {
      * @param newDish 菜品实体类
      * @return 成功返回菜品id/失败返回-1
      */
-    int insertNewDish(TDishEntity newDish);
+    int insertNewDish(TableDishEntity newDish);
 
     /**
      * 通过菜品id查找菜品
@@ -23,7 +23,7 @@ public interface DishImpl {
      * @param dishId 菜品id
      * @return 查询到的菜品数据
      */
-    TDishEntity findDishById(int dishId);
+    TableDishEntity findDishById(int dishId);
 
     /**
      * 通过菜品id更新菜品详情
@@ -31,7 +31,7 @@ public interface DishImpl {
      * @param updateDish 菜品详情
      * @return 更新是否成功
      */
-    boolean updateDishById(TDishEntity updateDish);
+    boolean updateDishById(TableDishEntity updateDish);
 
     /**
      * 通过id删除菜品
@@ -46,5 +46,5 @@ public interface DishImpl {
      *
      * @return 菜单list
      */
-    List<TDishEntity> getMenu();
+    List<TableDishEntity> getMenu();
 }

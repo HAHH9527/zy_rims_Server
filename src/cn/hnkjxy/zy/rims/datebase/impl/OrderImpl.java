@@ -1,6 +1,6 @@
 package cn.hnkjxy.zy.rims.datebase.impl;
 
-import cn.hnkjxy.zy.rims.bean.dbEntity.TOrderEntity;
+import cn.hnkjxy.zy.rims.bean.datebase.entity.TableOrderEntity;
 
 /**
  * @author 10248
@@ -13,7 +13,7 @@ public interface OrderImpl {
      * @param newOrder 新订单实体类
      * @return 添加成功返回订单id/失败返回-1
      */
-    int insertNewOrder(TOrderEntity newOrder);
+    int insertNewOrder(TableOrderEntity newOrder);
 
     /**
      * 通过订单id查找订单
@@ -21,7 +21,7 @@ public interface OrderImpl {
      * @param orderId 订单id
      * @return 订单实体类(查询不到返回null)
      */
-    TOrderEntity findOrderById(int orderId);
+    TableOrderEntity findOrderById(int orderId);
 
     /**
      * 通过订单id更新订单内容
@@ -29,5 +29,5 @@ public interface OrderImpl {
      * @param updateOrder 订单内容
      * @return 更新是否成功
      */
-    boolean updateOrderById(TOrderEntity updateOrder);
+    boolean updateOrderById(TableOrderEntity updateOrder);
 }

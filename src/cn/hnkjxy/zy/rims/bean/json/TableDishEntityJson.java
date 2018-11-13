@@ -1,8 +1,8 @@
 package cn.hnkjxy.zy.rims.bean.json;
 
-import cn.hnkjxy.zy.rims.bean.dbEntity.TDishEntity;
+import cn.hnkjxy.zy.rims.bean.datebase.entity.TableDishEntity;
 
-public class TDishEntityJson extends TDishEntity {
+public class TableDishEntityJson extends TableDishEntity {
     private String dishImgBase64Str;
 
     public String getDishImgBase64Str() {

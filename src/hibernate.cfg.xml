@@ -19,10 +19,10 @@
         <!-- DB schema will be updated if needed -->
         <property name="hbm2ddl.auto">update</property>
 
-        <mapping class="cn.hnkjxy.zy.rims.bean.dbEntity.TDishEntity"/>
-        <mapping class="cn.hnkjxy.zy.rims.bean.dbEntity.TOrderEntity"/>
-        <mapping resource="cn/hnkjxy/zy/rims/bean/dbEntity/TDishEntity.hbm.xml"/>
-        <mapping resource="cn/hnkjxy/zy/rims/bean/dbEntity/TOrderEntity.hbm.xml"/>
+        <mapping class="cn.hnkjxy.zy.rims.bean.datebase.entity.TableDishEntity"/>
+        <mapping class="cn.hnkjxy.zy.rims.bean.datebase.entity.TableOrderEntity"/>
+        <mapping resource="cn/hnkjxy/zy/rims/bean/datebase/entity/TableDishEntity.hbm.xml"/>
+        <mapping resource="cn/hnkjxy/zy/rims/bean/datebase/entity/TableOrderEntity.hbm.xml"/>
 
     </session-factory>
 

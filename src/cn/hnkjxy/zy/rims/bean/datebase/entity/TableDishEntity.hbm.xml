@@ -4,7 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="cn.hnkjxy.zy.rims.bean.dbEntity.TDishEntity" table="t_dish" schema="zy_rims">
+    <class name="cn.hnkjxy.zy.rims.bean.datebase.entity.TableDishEntity" table="t_dish" schema="zy_rims">
         <id name="dishId" column="dish_id">
             <generator class="identity"/>
         </id>

@@ -1,11 +1,11 @@
-package cn.hnkjxy.zy.rims.bean.dbEntity;
+package cn.hnkjxy.zy.rims.bean.datebase.entity;
 
 import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
 @Table(name = "t_dish", schema = "zy_rims")
-public class TDishEntity {
+public class TableDishEntity {
     private int dishId;
     private String dishName;
     private Double dishPrice;
@@ -81,7 +81,7 @@ public class TDishEntity {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        TDishEntity that = (TDishEntity) o;
+        TableDishEntity that = (TableDishEntity) o;
         return dishId == that.dishId &&
                 Objects.equals(dishName, that.dishName) &&
                 Objects.equals(dishPrice, that.dishPrice) &&

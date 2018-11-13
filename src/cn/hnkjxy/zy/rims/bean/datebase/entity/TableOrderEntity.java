@@ -1,4 +1,4 @@
-package cn.hnkjxy.zy.rims.bean.dbEntity;
+package cn.hnkjxy.zy.rims.bean.datebase.entity;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -6,7 +6,7 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "t_order", schema = "zy_rims")
-public class TOrderEntity {
+public class TableOrderEntity {
     private int orderId;
     private String tableId;
     private String orderStatus;
@@ -126,7 +126,7 @@ public class TOrderEntity {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        TOrderEntity that = (TOrderEntity) o;
+        TableOrderEntity that = (TableOrderEntity) o;
         return orderId == that.orderId &&
                 Objects.equals(tableId, that.tableId) &&
                 Objects.equals(orderStatus, that.orderStatus) &&

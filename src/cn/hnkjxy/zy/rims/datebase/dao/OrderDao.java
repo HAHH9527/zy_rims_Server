@@ -1,6 +1,6 @@
 package cn.hnkjxy.zy.rims.datebase.dao;
 
-import cn.hnkjxy.zy.rims.bean.dbEntity.TOrderEntity;
+import cn.hnkjxy.zy.rims.bean.datebase.entity.TableOrderEntity;
 import cn.hnkjxy.zy.rims.datebase.HibernateUtils;
 import cn.hnkjxy.zy.rims.datebase.impl.OrderImpl;
 
@@ -10,17 +10,17 @@ import cn.hnkjxy.zy.rims.datebase.impl.OrderImpl;
 public class OrderDao extends HibernateUtils implements OrderImpl {
 
     @Override
-    public int insertNewOrder(TOrderEntity newOrder) {
+    public int insertNewOrder(TableOrderEntity newOrder) {
         return -1;
     }
 
     @Override
-    public TOrderEntity findOrderById(int orderId) {
+    public TableOrderEntity findOrderById(int orderId) {
         return null;
     }
 
     @Override
-    public boolean updateOrderById(TOrderEntity updateOrder) {
+    public boolean updateOrderById(TableOrderEntity updateOrder) {
         return false;
     }
 }

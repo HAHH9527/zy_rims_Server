@@ -1,6 +1,6 @@
 package cn.hnkjxy.zy.rims.datebase.dao;
 
-import cn.hnkjxy.zy.rims.bean.dbEntity.TDishEntity;
+import cn.hnkjxy.zy.rims.bean.datebase.entity.TableDishEntity;
 import cn.hnkjxy.zy.rims.datebase.HibernateUtils;
 import cn.hnkjxy.zy.rims.datebase.impl.DishImpl;
 import org.hibernate.query.Query;
@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class DishDao extends HibernateUtils implements DishImpl {
     @Override
-    public int insertNewDish(TDishEntity newDish) {
+    public int insertNewDish(TableDishEntity newDish) {
         int retId;
 
         initHibernate();
@@ -33,13 +33,13 @@ public class DishDao extends HibernateUtils implements DishImpl {
     }
 
     @Override
-    public TDishEntity findDishById(int dishId) {
-        TDishEntity dish;
+    public TableDishEntity findDishById(int dishId) {
+        TableDishEntity dish;
 
         initHibernate();
 
         try {
-            dish = session.get(TDishEntity.class, dishId);
+            dish = session.get(TableDishEntity.class, dishId);
             commitTransaction();
         } catch (Exception e) {
             rollbackTransaction();
@@ -53,7 +53,7 @@ public class DishDao extends HibernateUtils implements DishImpl {
     }
 
     @Override
-    public boolean updateDishById(TDishEntity updateDish) {
+    public boolean updateDishById(TableDishEntity updateDish) {
         return false;
     }
 
@@ -63,13 +63,13 @@ public class DishDao extends HibernateUtils implements DishImpl {
     }
 
     @Override
-    public List<TDishEntity> getMenu() {
-        List<TDishEntity> list = null;
+    public List<TableDishEntity> getMenu() {
+        List<TableDishEntity> list = null;
 
         initHibernate();
 
         try {
-            Query<TDishEntity> query = session.createQuery("from TDishEntity", TDishEntity.class);
+            Query<TableDishEntity> query = session.createQuery("from TableDishEntity", TableDishEntity.class);
             list = query.list();
         } catch (Exception e) {
             rollbackTransaction();
