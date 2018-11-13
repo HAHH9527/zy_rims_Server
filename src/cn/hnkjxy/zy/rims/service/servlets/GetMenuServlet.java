@@ -1,17 +1,15 @@
-package cn.hnkjxy.zy.rims.service.servlets.dish;
+package cn.hnkjxy.zy.rims.service.servlets;
 
 import cn.hnkjxy.zy.rims.bean.dbEntity.TDishEntity;
 import cn.hnkjxy.zy.rims.datebase.dao.DishDao;
 import com.google.gson.Gson;
 
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.DriverManager;
 import java.util.List;
 
 /**
@@ -20,12 +18,12 @@ import java.util.List;
 @WebServlet(name = "GetMenuServlet", urlPatterns = "/GetMenu")
 public class GetMenuServlet extends HttpServlet {
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         doGet(request, response);
     }
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         // 设置响应内容类型
         response.setContentType("text/html;charset=utf-8");
         request.setCharacterEncoding("utf-8");
@@ -44,6 +42,15 @@ public class GetMenuServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         out.print(menuJson);
-
     }
+
+//    @Override
+//    public void destroy() {
+//        super.destroy();
+//        try{
+//            DriverManager.deregisterDriver(DriverManager.getDrivers().nextElement());
+//        }catch(Exception e){
+//            e.printStackTrace();
+//        }
+//    }
 }

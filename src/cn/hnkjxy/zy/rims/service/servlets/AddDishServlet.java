@@ -1,4 +1,4 @@
-package cn.hnkjxy.zy.rims.service.servlets.dish;
+package cn.hnkjxy.zy.rims.service.servlets;
 
 import org.apache.commons.io.IOUtils;
 
