@@ -3,6 +3,7 @@ package cn.hnkjxy.zy.rims.datebase.dao;
 import cn.hnkjxy.zy.rims.bean.dbEntity.TDishEntity;
 import cn.hnkjxy.zy.rims.datebase.HibernateUtils;
 import cn.hnkjxy.zy.rims.datebase.impl.DishImpl;
+import org.hibernate.query.Query;
 
 import java.util.List;
 
@@ -25,7 +26,7 @@ public class DishDao extends HibernateUtils implements DishImpl {
             retId = -1;
             e.printStackTrace();
         } finally {
-            finalclose();
+            closeFinally();
         }
 
         return retId;
@@ -33,8 +34,10 @@ public class DishDao extends HibernateUtils implements DishImpl {
 
     @Override
     public TDishEntity findDishById(int dishId) {
-        initHibernate();
         TDishEntity dish;
+
+        initHibernate();
+
         try {
             dish = session.get(TDishEntity.class, dishId);
             commitTransaction();
@@ -43,7 +46,7 @@ public class DishDao extends HibernateUtils implements DishImpl {
             dish = null;
             e.printStackTrace();
         } finally {
-            finalclose();
+            closeFinally();
         }
 
         return dish;
@@ -61,6 +64,19 @@ public class DishDao extends HibernateUtils implements DishImpl {
 
     @Override
     public List<TDishEntity> getMenu() {
-        return null;
+        List<TDishEntity> list = null;
+
+        initHibernate();
+
+        try {
+            Query<TDishEntity> query = session.createQuery("from TDishEntity", TDishEntity.class);
+            list = query.list();
+        } catch (Exception e) {
+            rollbackTransaction();
+        } finally {
+            closeFinally();
+        }
+
+        return list;
     }
 }
