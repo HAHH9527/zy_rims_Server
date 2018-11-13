@@ -1,4 +1,4 @@
-package cn.hnkjxy.zy.rims.service.servlets;
+package cn.hnkjxy.zy.rims.servlets;
 
 import cn.hnkjxy.zy.rims.bean.dbEntity.TDishEntity;
 import cn.hnkjxy.zy.rims.datebase.dao.DishDao;
