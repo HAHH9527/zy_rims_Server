@@ -1,4 +1,4 @@
-package cn.hnkjxy.zy.rims.service.utils;
+package cn.hnkjxy.zy.rims.utils;
 
 import org.junit.jupiter.api.Test;
 import sun.misc.BASE64Decoder;
@@ -21,11 +21,11 @@ public class ImageBase64Utils {
         //在线图片地址
 //        String string = "http://bpic.588ku.com//element_origin_min_pic/17/03/03/7bf4480888f35addcf2ce942701c728a.jpg";
 
-        String str = ImageBase64Utils.ImageToBase64ByLocal(url);
+        String str = ImageBase64Utils.imageToBase64ByLocal(url);
 
         System.out.println(str);
 
-        ImageBase64Utils.Base64ToImage(str, "./img/dish_img/test1.png");
+        ImageBase64Utils.base64ToImage(str, "./img/dish_img/test1.png");
 
     }
 
@@ -35,7 +35,7 @@ public class ImageBase64Utils {
      * @param imgFile 图片本地路径
      * @return Base64字符串
      */
-    public static String ImageToBase64ByLocal(String imgFile) {// 将图片文件转化为字节数组字符串，并对其进行Base64编码处理
+    public static String imageToBase64ByLocal(String imgFile) {// 将图片文件转化为字节数组字符串，并对其进行Base64编码处理
 
 
         InputStream in = null;
@@ -63,9 +63,9 @@ public class ImageBase64Utils {
      * 在线图片转换成base64字符串
      *
      * @param imgURL 图片线上路径
-     * @return
+     * @return Base64字符串
      */
-    public static String ImageToBase64ByOnline(String imgURL) {
+    public static String imageToBase64ByOnline(String imgURL) {
         ByteArrayOutputStream data = new ByteArrayOutputStream();
         try {
             // 创建URL
@@ -98,7 +98,7 @@ public class ImageBase64Utils {
      * @param imgStr      base64字符串
      * @param imgFilePath 图片存放路径
      */
-    public static boolean Base64ToImage(String imgStr, String imgFilePath) { // 对字节数组字符串进行Base64解码并生成图片
+    public static boolean base64ToImage(String imgStr, String imgFilePath) { // 对字节数组字符串进行Base64解码并生成图片
 
         //判断图像数据为空
         if (imgStr == null || imgStr.equals("")) {
