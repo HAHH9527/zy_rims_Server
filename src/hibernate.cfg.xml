@@ -23,5 +23,7 @@
         <mapping class="cn.hnkjxy.zy.rims.bean.dbEntity.TOrderEntity"/>
         <mapping resource="cn/hnkjxy/zy/rims/bean/dbEntity/TDishEntity.hbm.xml"/>
         <mapping resource="cn/hnkjxy/zy/rims/bean/dbEntity/TOrderEntity.hbm.xml"/>
+
     </session-factory>
+
 </hibernate-configuration>
