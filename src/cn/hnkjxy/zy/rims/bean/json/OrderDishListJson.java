@@ -1,5 +1,8 @@
 package cn.hnkjxy.zy.rims.bean.json;
 
+/**
+ * @author 10248
+ */
 public class OrderDishListJson {
     private int[] dishList;
 

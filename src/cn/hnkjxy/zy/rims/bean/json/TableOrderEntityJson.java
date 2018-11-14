@@ -5,6 +5,9 @@ import cn.hnkjxy.zy.rims.bean.datebase.entity.TableOrderEntity;
 
 import java.util.List;
 
+/**
+ * @author 10248
+ */
 public class TableOrderEntityJson extends TableOrderEntity {
     private List<TableDishEntity> dishListI;
 

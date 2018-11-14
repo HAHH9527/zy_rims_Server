@@ -2,7 +2,10 @@ package cn.hnkjxy.zy.rims.bean.json;
 
 import cn.hnkjxy.zy.rims.bean.datebase.entity.TableDishEntity;
 
-public class TableDishEntityJson extends TableDishEntity {
+/**
+ * @author 10248
+ */
+public class TableDishAndBase64Image extends TableDishEntity {
     private String dishImgBase64Str;
 
     public String getDishImgBase64Str() {
