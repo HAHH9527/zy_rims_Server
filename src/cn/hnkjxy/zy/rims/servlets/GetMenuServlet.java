@@ -44,13 +44,4 @@ public class GetMenuServlet extends HttpServlet {
         out.print(menuJson);
     }
 
-//    @Override
-//    public void destroy() {
-//        super.destroy();
-//        try{
-//            DriverManager.deregisterDriver(DriverManager.getDrivers().nextElement());
-//        }catch(Exception e){
-//            e.printStackTrace();
-//        }
-//    }
 }
