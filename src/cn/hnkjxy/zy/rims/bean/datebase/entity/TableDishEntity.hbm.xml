@@ -10,7 +10,6 @@
         </id>
         <property name="dishName" column="dish_name"/>
         <property name="dishPrice" column="dish_price"/>
-        <property name="dishImgSrc" column="dish_img_src"/>
         <property name="dishImgName" column="dish_img_name"/>
         <property name="dishIntroduced" column="dish_introduced"/>
     </class>

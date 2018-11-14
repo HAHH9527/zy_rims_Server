@@ -9,7 +9,6 @@ public class TableDishEntity {
     private int dishId;
     private String dishName;
     private Double dishPrice;
-    private String dishImgSrc;
     private String dishImgName;
     private String dishIntroduced;
 
@@ -44,16 +43,6 @@ public class TableDishEntity {
     }
 
     @Basic
-    @Column(name = "dish_img_src")
-    public String getDishImgSrc() {
-        return dishImgSrc;
-    }
-
-    public void setDishImgSrc(String dishImgSrc) {
-        this.dishImgSrc = dishImgSrc;
-    }
-
-    @Basic
     @Column(name = "dish_img_name")
     public String getDishImgName() {
         return dishImgName;
@@ -85,13 +74,12 @@ public class TableDishEntity {
         return dishId == that.dishId &&
                 Objects.equals(dishName, that.dishName) &&
                 Objects.equals(dishPrice, that.dishPrice) &&
-                Objects.equals(dishImgSrc, that.dishImgSrc) &&
                 Objects.equals(dishImgName, that.dishImgName) &&
                 Objects.equals(dishIntroduced, that.dishIntroduced);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(dishId, dishName, dishPrice, dishImgSrc, dishImgName, dishIntroduced);
+        return Objects.hash(dishId, dishName, dishPrice, dishImgName, dishIntroduced);
     }
 }
