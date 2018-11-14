@@ -59,12 +59,31 @@ public class DishDao extends HibernateUtils implements DishImpl {
 
     @Override
     public boolean deleteDishById(int dishId) {
-        return false;
+        boolean ret;
+
+        initHibernate();
+
+        TableDishEntity deleteEntity = new TableDishEntity();
+        deleteEntity.setDishId(dishId);
+
+        try {
+            session.delete(deleteEntity);
+            commitTransaction();
+            ret = true;
+        } catch (Exception e) {
+            rollbackTransaction();
+            ret = false;
+            e.printStackTrace();
+        } finally {
+            closeFinally();
+        }
+
+        return ret;
     }
 
     @Override
     public List<TableDishEntity> getMenu() {
-        List<TableDishEntity> list = null;
+        List<TableDishEntity> list;
 
         initHibernate();
 
@@ -73,6 +92,8 @@ public class DishDao extends HibernateUtils implements DishImpl {
             list = query.list();
         } catch (Exception e) {
             rollbackTransaction();
+            list = null;
+            e.printStackTrace();
         } finally {
             closeFinally();
         }
