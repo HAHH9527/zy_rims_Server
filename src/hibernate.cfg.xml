@@ -9,7 +9,8 @@
         <property name="connection.username">root</property>
         <property name="connection.password">root</property>
 
-        <property name="connection.useSSL">false</property>
+        <property name="connection.useSSL">true</property>
+        <property name="connection.verifyServerCertificate">false</property>
         <property name="connection.serverTimezone">UTC</property>
 
         <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
