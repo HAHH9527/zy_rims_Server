@@ -38,23 +38,32 @@ public class DishDao extends HibernateUtils implements DishImpl {
 
         initHibernate();
 
-        try {
-            dish = session.get(TableDishEntity.class, dishId);
-            commitTransaction();
-        } catch (Exception e) {
-            rollbackTransaction();
-            dish = null;
-            e.printStackTrace();
-        } finally {
-            closeFinally();
-        }
+        dish = session.get(TableDishEntity.class, dishId);
+        commitTransaction();
+        closeFinally();
 
         return dish;
     }
 
     @Override
     public boolean updateDishById(TableDishEntity updateDish) {
-        return false;
+        boolean ret;
+
+        initHibernate();
+
+        try {
+            session.merge(updateDish);
+            commitTransaction();
+            ret = true;
+        } catch (Exception e) {
+            rollbackTransaction();
+            ret = false;
+            e.printStackTrace();
+        } finally {
+            closeFinally();
+        }
+
+        return ret;
     }
 
     @Override

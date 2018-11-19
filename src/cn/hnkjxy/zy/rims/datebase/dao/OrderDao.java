@@ -11,16 +11,56 @@ public class OrderDao extends HibernateUtils implements OrderImpl {
 
     @Override
     public int insertNewOrder(TableOrderEntity newOrder) {
-        return -1;
+        int retId;
+
+        initHibernate();
+
+        try {
+            session.persist(newOrder);
+            commitTransaction();
+            retId = newOrder.getOrderId();
+        } catch (Exception e) {
+            rollbackTransaction();
+            retId = -1;
+            e.printStackTrace();
+        } finally {
+            closeFinally();
+        }
+
+        return retId;
     }
 
     @Override
     public TableOrderEntity findOrderById(int orderId) {
-        return null;
+        TableOrderEntity order;
+
+        initHibernate();
+
+        order = session.get(TableOrderEntity.class, orderId);
+        commitTransaction();
+        closeFinally();
+
+        return order;
     }
 
     @Override
     public boolean updateOrderById(TableOrderEntity updateOrder) {
-        return false;
+        boolean ret;
+
+        initHibernate();
+
+        try {
+            session.merge(updateOrder);
+            commitTransaction();
+            ret = true;
+        } catch (Exception e) {
+            rollbackTransaction();
+            ret = false;
+            e.printStackTrace();
+        } finally {
+            closeFinally();
+        }
+
+        return ret;
     }
 }
