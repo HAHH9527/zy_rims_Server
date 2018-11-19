@@ -1,8 +1,6 @@
 package cn.hnkjxy.zy.rims.servlets;
 
-import cn.hnkjxy.zy.rims.bean.datebase.entity.TableDishEntity;
-import cn.hnkjxy.zy.rims.datebase.dao.DishDao;
-import com.google.gson.Gson;
+import cn.hnkjxy.zy.rims.utils.MenuMangerUtils;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 
 /**
  * @author 10248
@@ -31,17 +28,9 @@ public class GetMenuServlet extends HttpServlet {
 
         System.out.println("收到GetMenu请求");
 
-        DishDao dao = new DishDao();
-
-        List<TableDishEntity> tableDishEntityList = dao.getMenu();
-
-        Gson gson = new Gson();
-
-        String menuJson = gson.toJson(tableDishEntityList);
-
         PrintWriter out = response.getWriter();
 
-        out.print(menuJson);
+        out.print(MenuMangerUtils.getMenuJson());
     }
 
 }
