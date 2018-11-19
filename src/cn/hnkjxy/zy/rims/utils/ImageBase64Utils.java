@@ -4,8 +4,6 @@ import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
 
 import java.io.*;
-import java.net.HttpURLConnection;
-import java.net.URL;
 
 /**
  * 图片Base64互转工具类
@@ -13,7 +11,7 @@ import java.net.URL;
  * @author 10248
  */
 public class ImageBase64Utils {
-    final private static String imgPath = "./img/dish_img/";
+    final private static String imgPath = "E:/resource/dish_img/";
 
     /**
      * 本地图片转换成base64字符串
@@ -25,7 +23,7 @@ public class ImageBase64Utils {
         InputStream in;
 
         //文件名加上图片路径
-        imgFile += imgPath;
+        imgFile = imgPath + imgFile;
 
         byte[] data = null;
 
@@ -81,13 +79,13 @@ public class ImageBase64Utils {
     /**
      * base64字符串转换成图片
      *
-     * @param imgStr      base64字符串
-     * @param imgFilePath 图片存放路径
+     * @param imgStr  base64字符串
+     * @param imgFile 图片文件名
      */
-    public static boolean base64ImageSaveToLocal(String imgStr, String imgFilePath) { // 对字节数组字符串进行Base64解码并生成图片
+    public static boolean base64ImageSaveToLocal(String imgStr, String imgFile) { // 对字节数组字符串进行Base64解码并生成图片
 
         //文件名加上图片路径
-        imgFilePath += imgPath;
+        imgFile = imgPath + imgFile;
 
         //判断图像数据为空
         if (imgStr == null || "".equals(imgStr)) {
@@ -105,7 +103,7 @@ public class ImageBase64Utils {
                 }
             }
 
-            OutputStream out = new FileOutputStream(imgFilePath);
+            OutputStream out = new FileOutputStream(imgFile);
             out.write(b);
             out.flush();
             out.close();
