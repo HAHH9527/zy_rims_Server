@@ -27,10 +27,14 @@ public class MenuMangerUtils {
     public static int addDish(TableDishAndBase64Image tableDishAndBase64Image) {
         int newDishId;
 
+        System.out.println(tableDishAndBase64Image.getDishImgBase64Str());
         //将Base64图片存至本地
         try {
-            ImageBase64Utils.base64ImageSaveToLocal(tableDishAndBase64Image.getDishImgBase64Str()
-                    , tableDishAndBase64Image.getDishImgName());
+            if (!ImageBase64Utils.base64ImageSaveToLocal(tableDishAndBase64Image.getDishImgBase64Str()
+                    , tableDishAndBase64Image.getDishImgName())) {
+                newDishId = -1;
+                return newDishId;
+            }
         } catch (Exception e) {
             newDishId = -1;
             e.printStackTrace();
