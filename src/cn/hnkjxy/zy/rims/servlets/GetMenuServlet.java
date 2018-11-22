@@ -32,5 +32,4 @@ public class GetMenuServlet extends HttpServlet {
 
         out.print(MenuMangerUtils.getMenuJson());
     }
-
 }
