@@ -27,7 +27,6 @@ public class MenuMangerUtils {
     public static int addDish(TableDishAndBase64Image tableDishAndBase64Image) {
         int newDishId;
 
-        System.out.println(tableDishAndBase64Image.getDishImgBase64Str());
         //将Base64图片存至本地
         try {
             if (!ImageBase64Utils.base64ImageSaveToLocal(tableDishAndBase64Image.getDishImgBase64Str()
@@ -42,12 +41,7 @@ public class MenuMangerUtils {
         }
 
         //转换实体类
-        TableDishEntity tableDishEntity = new TableDishEntity();
-        tableDishEntity.setDishId(tableDishAndBase64Image.getDishId());
-        tableDishEntity.setDishName(tableDishAndBase64Image.getDishName());
-        tableDishEntity.setDishPrice(tableDishAndBase64Image.getDishPrice());
-        tableDishEntity.setDishImgName(tableDishAndBase64Image.getDishImgName());
-        tableDishEntity.setDishIntroduced(tableDishAndBase64Image.getDishIntroduced());
+        TableDishEntity tableDishEntity = BeanTransformUtils.tableDishAndBase64ImageDeleteBase64(tableDishAndBase64Image);
 
         //操作数据库
         DishDao dao = new DishDao();
@@ -62,6 +56,55 @@ public class MenuMangerUtils {
         updateMenu();
 
         return newDishId;
+    }
+
+    /**
+     * 更新菜品
+     *
+     * @param tableDishAndBase64Image 需要更新的菜品信息
+     * @return 更新成功或者失败
+     */
+    public static boolean updateDish(TableDishAndBase64Image tableDishAndBase64Image) {
+        boolean ret;
+
+        if (tableDishAndBase64Image.getDishImgBase64Str() != null || "".equals(tableDishAndBase64Image.getDishImgBase64Str())) {
+            try {
+                if (!ImageBase64Utils.base64ImageSaveToLocal(tableDishAndBase64Image.getDishImgBase64Str()
+                        , tableDishAndBase64Image.getDishImgName())) {
+                    return false;
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+                return false;
+            }
+        }
+
+        //转换实体类
+        TableDishEntity tableDishEntity = BeanTransformUtils.tableDishAndBase64ImageDeleteBase64(tableDishAndBase64Image);
+
+        //操作数据库
+        DishDao dao = new DishDao();
+        try {
+            ret = dao.updateDishById(tableDishEntity);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+
+        updateMenu();
+        return ret;
+    }
+
+    /**
+     * 通过id删除菜品
+     *
+     * @param dishId 需要删除的菜品id
+     * @return 删除成功或者失败
+     */
+    public static boolean deleteDish(int dishId) {
+        boolean ret = new DishDao().deleteDishById(dishId);
+        updateMenu();
+        return ret;
     }
 
     /**
