@@ -11,7 +11,7 @@ import java.io.*;
  * @author 10248
  */
 public class ImageBase64Utils {
-    final private static String imgPath = "E:/resource/dish_img/";
+    final private static String imgPath = "E:/Program Files/Apache Software Foundation/Tomcat 9.0/webapps/ROOT/resources/";
 
     /**
      * 本地图片转换成base64字符串
@@ -84,11 +84,19 @@ public class ImageBase64Utils {
      */
     public static boolean base64ImageSaveToLocal(String imgStr, String imgFile) { // 对字节数组字符串进行Base64解码并生成图片
 
+        System.out.println("添加图片");
+
+        if (imgFile == null || "".equals(imgFile)) {
+            System.out.println("图片名字为空");
+            return false;
+        }
+
         //文件名加上图片路径
         imgFile = imgPath + imgFile;
 
         //判断图像数据为空
         if (imgStr == null || "".equals(imgStr)) {
+            System.out.println("图片数据为空");
             return false;
         }
 
@@ -108,8 +116,12 @@ public class ImageBase64Utils {
             out.flush();
             out.close();
 
+            System.out.println("添加图片成功");
+
             return true;
         } catch (Exception e) {
+            System.out.println("添加图片失败");
+            e.printStackTrace();
             return false;
         }
 
