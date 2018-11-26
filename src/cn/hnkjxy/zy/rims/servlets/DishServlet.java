@@ -5,7 +5,6 @@ import cn.hnkjxy.zy.rims.utils.MenuMangerUtils;
 import com.google.gson.Gson;
 import org.apache.commons.io.IOUtils;
 
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -29,19 +28,28 @@ public class DishServlet extends HttpServlet {
         InputStream inputStream = request.getInputStream();
         String bodyInfo = IOUtils.toString(inputStream, "utf-8");
 
-        System.out.println("收到AddDishPost请求");
+        System.out.println("收到DishPost请求");
         System.out.println(bodyInfo);
 
         PrintWriter out = response.getWriter();
 
         Gson gson = new Gson();
         TableDishAndBase64Image tableDishAndBase64Image = gson.fromJson(bodyInfo, TableDishAndBase64Image.class);
-        int dishId = MenuMangerUtils.addDish(tableDishAndBase64Image);
 
-        if (dishId > 0) {
-            out.write("添加成功，菜品id为(" + dishId + ")");
+        //判断是更新还是新增
+        if (tableDishAndBase64Image.getDishId() > 0) {
+            if (MenuMangerUtils.updateDish(tableDishAndBase64Image)) {
+                out.write("更新成功");
+            } else {
+                out.write("更新失败");
+            }
         } else {
-            out.write("添加失败");
+            int dishId = MenuMangerUtils.addDish(tableDishAndBase64Image);
+            if (dishId > 0) {
+                out.write("添加成功，菜品id为(" + dishId + ")");
+            } else {
+                out.write("添加失败");
+            }
         }
     }
 
@@ -60,7 +68,7 @@ public class DishServlet extends HttpServlet {
     }
 
     @Override
-    protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws IOException {
         // 设置响应内容类型
         response.setContentType("text/html;charset=utf-8");
         request.setCharacterEncoding("utf-8");
@@ -71,9 +79,15 @@ public class DishServlet extends HttpServlet {
 
         System.out.println("收到Delete请求");
         System.out.println(bodyInfo);
-
         PrintWriter out = response.getWriter();
-        out.write("得到信息：" + bodyInfo);
+
+        int dishId = Integer.parseInt(bodyInfo);
+
+        if (MenuMangerUtils.deleteDish(dishId)) {
+            out.write("删除成功");
+        } else {
+            out.write("删除失败");
+        }
 
     }
 }
