@@ -14,8 +14,24 @@ import java.util.List;
 public class BeanTransformUtils {
 
     /**
+     * 将TableDishAndBase64Image中的Base64Str去除，转换成TableDishEntity
+     *
+     * @param tableDishAndBase64Image 需要去除的TableDishAndBase64Image
+     * @return 处理完的TableDishEntity
+     */
+    public static TableDishEntity tableDishAndBase64ImageDeleteBase64(TableDishAndBase64Image tableDishAndBase64Image) {
+        TableDishEntity tableDishEntity = new TableDishEntity();
+        tableDishEntity.setDishId(tableDishAndBase64Image.getDishId());
+        tableDishEntity.setDishName(tableDishAndBase64Image.getDishName());
+        tableDishEntity.setDishPrice(tableDishAndBase64Image.getDishPrice());
+        tableDishEntity.setDishImgName(tableDishAndBase64Image.getDishImgName());
+        tableDishEntity.setDishIntroduced(tableDishAndBase64Image.getDishIntroduced());
+
+        return tableDishEntity;
+    }
+
+    /**
      * 给 List<TableDishEntity> 添加Base64Image
-     * List<TableDishAndBase64Image>
      *
      * @param entityList 需要添加的List<TableDishEntity>
      * @return 添加完成的List<TableDishAndBase64Image>
@@ -37,7 +53,6 @@ public class BeanTransformUtils {
 
     /**
      * 给 TableDishEntity 添加Base64Image
-     * TableDishAndBase64Image
      *
      * @param tableDishEntity 需要添加的TableDishEntity
      * @return 添加完成的TableDishAndBase64Image
