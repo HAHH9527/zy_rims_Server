@@ -81,6 +81,7 @@ public class ImageBase64Utils {
      *
      * @param imgStr  base64字符串
      * @param imgFile 图片文件名
+     * @@return 成功或者失败
      */
     public static boolean base64ImageSaveToLocal(String imgStr, String imgFile) { // 对字节数组字符串进行Base64解码并生成图片
 
