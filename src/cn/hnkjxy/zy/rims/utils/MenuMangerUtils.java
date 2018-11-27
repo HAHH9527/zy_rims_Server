@@ -121,13 +121,6 @@ public class MenuMangerUtils {
     private static void startUpdateMenuThread() {
         UpdateMenuThread updateMenuThread = new UpdateMenuThread();
         updateMenuThread.start();
-        try {
-            updateMenuThread.join(5000);
-            updateMenuThread.interrupt();
-            updateStatus = false;
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 
     /**
