@@ -67,7 +67,8 @@ public class MenuMangerUtils {
     public static boolean updateDish(TableDishAndBase64Image tableDishAndBase64Image) {
         boolean ret;
 
-        if (tableDishAndBase64Image.getDishImgBase64Str() != null || "".equals(tableDishAndBase64Image.getDishImgBase64Str())) {
+        if (tableDishAndBase64Image.getDishImgBase64Str() == null || "".equals(tableDishAndBase64Image.getDishImgBase64Str())) {
+        } else {
             try {
                 if (!ImageBase64Utils.base64ImageSaveToLocal(tableDishAndBase64Image.getDishImgBase64Str()
                         , tableDishAndBase64Image.getDishImgName())) {
