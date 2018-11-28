@@ -6,6 +6,7 @@ import cn.hnkjxy.zy.rims.datebase.dao.DishDao;
 import com.google.gson.Gson;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * 管理菜单工具类
@@ -13,7 +14,6 @@ import java.util.List;
  * @author 10248
  */
 public class MenuMangerUtils {
-    private static boolean updateStatus = false;
     private static List<TableDishEntity> tableDishEntityList;
     private static List<TableDishAndBase64Image> menuAndBase64List;
     private static String menuJson;
@@ -67,8 +67,7 @@ public class MenuMangerUtils {
     public static boolean updateDish(TableDishAndBase64Image tableDishAndBase64Image) {
         boolean ret;
 
-        if (tableDishAndBase64Image.getDishImgBase64Str() == null || "".equals(tableDishAndBase64Image.getDishImgBase64Str())) {
-        } else {
+        if (tableDishAndBase64Image.getDishImgBase64Str() != null && !"".equals(tableDishAndBase64Image.getDishImgBase64Str())) {
             try {
                 if (!ImageBase64Utils.base64ImageSaveToLocal(tableDishAndBase64Image.getDishImgBase64Str()
                         , tableDishAndBase64Image.getDishImgName())) {
@@ -84,13 +83,7 @@ public class MenuMangerUtils {
         TableDishEntity tableDishEntity = BeanTransformUtils.tableDishAndBase64ImageDeleteBase64(tableDishAndBase64Image);
 
         //操作数据库
-        DishDao dao = new DishDao();
-        try {
-            ret = dao.updateDishById(tableDishEntity);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
-        }
+        ret = new DishDao().updateDish(tableDishEntity);
 
         updateMenu();
         return ret;
@@ -112,65 +105,23 @@ public class MenuMangerUtils {
      * 更新菜单数据进入内存中
      */
     public static void updateMenu() {
-        startUpdateMenuThread();
-    }
-
-    /**
-     * 启动更新菜单线程,5000毫秒未完成则中断线程,更新失败
-     */
-    private static void startUpdateMenuThread() {
-        UpdateMenuThread updateMenuThread = new UpdateMenuThread();
-        updateMenuThread.start();
-    }
-
-    /**
-     * 更新菜单线程,UpdateMenuThread内部类
-     */
-    private static class UpdateMenuThread extends Thread {
-        @Override
-        public void run() {
-            updateStatus = false;
-            if (updateMenuStep1()) {
-                updateMenuStep2();
-                updateMenuStep3();
-                updateStatus = true;
-            } else {
-                updateStatus = false;
-            }
+        //第一步,从数据库读取数据
+        tableDishEntityList = new DishDao().getMenu();
+        //第二步,将实体类进行转换,添加图片数据
+        if (tableDishEntityList != null && tableDishEntityList.size() > 0) {
+            menuAndBase64List = BeanTransformUtils.menuListAddImageBase64(tableDishEntityList);
         }
-    }
-
-    /**
-     * 更新第一步,从数据库读取数据
-     *
-     * @return 从数据库读取是否成功
-     */
-    private static boolean updateMenuStep1() {
-        DishDao dao = new DishDao();
-        List<TableDishEntity> temp = dao.getMenu();
-
-        //如果未查询到内容 返回false
-        if (temp == null || temp.size() <= 0) {
-            updateStatus = false;
-            return false;
-        } else {
-            tableDishEntityList = temp;
-            return true;
-        }
-    }
-
-    /**
-     * 更新第二步,将实体类进行转换,添加图片数据
-     */
-    private static void updateMenuStep2() {
-        menuAndBase64List = BeanTransformUtils.menuListAddImageBase64(tableDishEntityList);
-    }
-
-    /**
-     * 更新第三步,将图片实体类转换成json数据,等待发送
-     */
-    private static void updateMenuStep3() {
+        //第三步,将图片实体类转换成json数据
         menuJson = new Gson().toJson(menuAndBase64List);
+        setDishPriceMap();
+    }
+
+    public static void setDishPriceMap() {
+        OrderMangerUtils.setDishPriceMap(
+                tableDishEntityList.stream().collect(
+                        Collectors.toMap(TableDishEntity::getDishId, TableDishEntity::getDishPrice, (oldValue, newValue) -> newValue)
+                )
+        );
     }
 
     public static String getMenuJson() {
