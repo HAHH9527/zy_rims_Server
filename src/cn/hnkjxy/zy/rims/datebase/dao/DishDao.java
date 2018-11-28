@@ -46,7 +46,7 @@ public class DishDao extends HibernateUtils implements DishImpl {
     }
 
     @Override
-    public boolean updateDishById(TableDishEntity updateDish) {
+    public boolean updateDish(TableDishEntity updateDish) {
         boolean ret;
 
         initHibernate();
@@ -96,16 +96,9 @@ public class DishDao extends HibernateUtils implements DishImpl {
 
         initHibernate();
 
-        try {
-            Query<TableDishEntity> query = session.createQuery("from TableDishEntity", TableDishEntity.class);
-            list = query.list();
-        } catch (Exception e) {
-            rollbackTransaction();
-            list = null;
-            e.printStackTrace();
-        } finally {
-            closeFinally();
-        }
+        Query<TableDishEntity> query = session.createQuery("from TableDishEntity", TableDishEntity.class);
+        list = query.list();
+        closeFinally();
 
         return list;
     }

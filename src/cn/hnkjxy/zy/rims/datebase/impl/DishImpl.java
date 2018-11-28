@@ -31,7 +31,7 @@ public interface DishImpl {
      * @param updateDish 菜品详情
      * @return 更新是否成功
      */
-    boolean updateDishById(TableDishEntity updateDish);
+    boolean updateDish(TableDishEntity updateDish);
 
     /**
      * 通过id删除菜品
