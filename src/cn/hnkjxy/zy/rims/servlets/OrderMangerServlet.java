@@ -1,8 +1,7 @@
 package cn.hnkjxy.zy.rims.servlets;
 
-import cn.hnkjxy.zy.rims.utils.MenuMangerUtils;
+import cn.hnkjxy.zy.rims.utils.OrderMangerUtils;
 
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -13,26 +12,27 @@ import java.io.PrintWriter;
 /**
  * @author 10248
  */
-@WebServlet(name = "MenuMangerServlet", urlPatterns = "/MenuManger", loadOnStartup = 0)
-public class MenuMangerServlet extends HttpServlet {
+@WebServlet(name = "OrderMangerServlet", urlPatterns = "/OrderManger", loadOnStartup = 0)
+public class OrderMangerServlet extends HttpServlet {
 
     @Override
     public void init() {
-        System.out.println("init MenuMangerServlet");
-        MenuMangerUtils.updateMenu();
+        System.out.println("init OrderMangerServlet");
+        OrderMangerUtils.updateWaitingOrderList();
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        // 设置响应内容类型
         response.setContentType("text/html;charset=utf-8");
         request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
 
-        MenuMangerUtils.updateMenu();
+        OrderMangerUtils.updateWaitingOrderList();
 
         PrintWriter out = response.getWriter();
 
         out.write("刷新成功");
     }
+
+
 }
