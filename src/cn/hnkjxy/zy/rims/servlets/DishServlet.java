@@ -26,15 +26,14 @@ public class DishServlet extends HttpServlet {
         response.setCharacterEncoding("utf-8");
 
         InputStream inputStream = request.getInputStream();
-        String bodyInfo = IOUtils.toString(inputStream, "utf-8");
+        String body = IOUtils.toString(inputStream, "utf-8");
 
-        System.out.println("收到DishPost请求");
-        System.out.println(bodyInfo);
+//        System.out.println("收到DishPost请求");
+//        System.out.println(body);
 
         PrintWriter out = response.getWriter();
 
-        Gson gson = new Gson();
-        TableDishAndBase64Image tableDishAndBase64Image = gson.fromJson(bodyInfo, TableDishAndBase64Image.class);
+        TableDishAndBase64Image tableDishAndBase64Image = new Gson().fromJson(body, TableDishAndBase64Image.class);
 
         //判断是更新还是新增
         if (tableDishAndBase64Image.getDishId() > 0) {
@@ -75,19 +74,22 @@ public class DishServlet extends HttpServlet {
         response.setCharacterEncoding("utf-8");
 
         InputStream inputStream = request.getInputStream();
-        String bodyInfo = IOUtils.toString(inputStream, "utf-8");
+        String body = IOUtils.toString(inputStream, "utf-8");
 
         System.out.println("收到Delete请求");
-        System.out.println(bodyInfo);
+        System.out.println(body);
         PrintWriter out = response.getWriter();
 
-        int dishId = Integer.parseInt(bodyInfo);
-
-        if (MenuMangerUtils.deleteDish(dishId)) {
-            out.write("删除成功");
-        } else {
+        try {
+            int dishId = Integer.parseInt(body);
+            if (MenuMangerUtils.deleteDish(dishId)) {
+                out.write("删除成功");
+            } else {
+                out.write("删除失败");
+            }
+        } catch (Exception e) {
             out.write("删除失败");
+            e.printStackTrace();
         }
-
     }
 }
