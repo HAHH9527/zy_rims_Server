@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="zy_rims@localhost">
-  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.11">
+  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.14">
     <root id="1">
       <ServerVersion>8.0.12</ServerVersion>
       <DefaultEngine>InnoDB</DefaultEngine>
@@ -1123,79 +1123,76 @@
       <DataType>double(10,2 digit)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="282" parent="277" name="dish_img_src">
+    <column id="282" parent="277" name="dish_img_name">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="283" parent="277" name="dish_img_name">
+    <column id="283" parent="277" name="dish_introduced">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="284" parent="277" name="dish_introduced">
-      <Position>6</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <key id="285" parent="277" name="PRIMARY">
+    <key id="284" parent="277" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>dish_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="286" parent="278" name="order_id">
+    <column id="285" parent="278" name="order_id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="287" parent="278" name="table_id">
+    <column id="286" parent="278" name="table_id">
       <Position>2</Position>
       <DataType>varchar(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="288" parent="278" name="order_status">
+    <column id="287" parent="278" name="order_status">
       <Position>3</Position>
-      <DataType>varchar(128)|0s</DataType>
+      <DataType>varchar(32)|0s</DataType>
+      <DefaultExpression>&apos;waiting&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="289" parent="278" name="use_time">
+    <column id="288" parent="278" name="use_time">
       <Position>4</Position>
       <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="290" parent="278" name="end_time">
+    <column id="289" parent="278" name="end_time">
       <Position>5</Position>
       <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="291" parent="278" name="dish_list">
+    <column id="290" parent="278" name="dish_list">
       <Position>6</Position>
       <DataType>json|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="292" parent="278" name="order_price">
+    <column id="291" parent="278" name="order_price">
       <Position>7</Position>
       <DataType>double(10,2 digit)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="293" parent="278" name="order_discount">
+    <column id="292" parent="278" name="order_discount">
       <Position>8</Position>
       <DataType>double(10,2 digit)|0s</DataType>
+      <DefaultExpression>1.00</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="294" parent="278" name="order_price_real">
+    <column id="293" parent="278" name="order_price_real">
       <Position>9</Position>
       <DataType>double(10,2 digit)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="295" parent="278" name="order_other">
+    <column id="294" parent="278" name="order_other">
       <Position>10</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="296" parent="278" name="PRIMARY">
+    <key id="295" parent="278" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>order_id</ColNames>
       <Primary>1</Primary>
