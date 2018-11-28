@@ -3,6 +3,9 @@ package cn.hnkjxy.zy.rims.datebase.dao;
 import cn.hnkjxy.zy.rims.bean.datebase.entity.TableOrderEntity;
 import cn.hnkjxy.zy.rims.datebase.HibernateUtils;
 import cn.hnkjxy.zy.rims.datebase.impl.OrderImpl;
+import org.hibernate.query.Query;
+
+import java.util.List;
 
 /**
  * @author 10248
@@ -44,7 +47,7 @@ public class OrderDao extends HibernateUtils implements OrderImpl {
     }
 
     @Override
-    public boolean updateOrderById(TableOrderEntity updateOrder) {
+    public boolean updateOrder(TableOrderEntity updateOrder) {
         boolean ret;
 
         initHibernate();
@@ -62,5 +65,19 @@ public class OrderDao extends HibernateUtils implements OrderImpl {
         }
 
         return ret;
+    }
+
+    @Override
+    public List<TableOrderEntity> getWaitingOrderList() {
+        List<TableOrderEntity> list;
+
+        initHibernate();
+
+        Query<TableOrderEntity> query = session.createQuery("from TableOrderEntity where orderStatus = :orderStatus");
+        query.setParameter("orderStatus", "waiting");
+        list = query.list();
+        closeFinally();
+
+        return list;
     }
 }

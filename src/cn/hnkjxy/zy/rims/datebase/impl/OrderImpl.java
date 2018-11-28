@@ -2,6 +2,8 @@ package cn.hnkjxy.zy.rims.datebase.impl;
 
 import cn.hnkjxy.zy.rims.bean.datebase.entity.TableOrderEntity;
 
+import java.util.List;
+
 /**
  * @author 10248
  */
@@ -29,5 +31,12 @@ public interface OrderImpl {
      * @param updateOrder 订单内容
      * @return 更新是否成功
      */
-    boolean updateOrderById(TableOrderEntity updateOrder);
+    boolean updateOrder(TableOrderEntity updateOrder);
+
+    /**
+     * 查找所有未完成订单
+     *
+     * @return 未完成订单list
+     */
+    List<TableOrderEntity> getWaitingOrderList();
 }
