@@ -3,6 +3,9 @@ package cn.hnkjxy.zy.rims.bean.datebase.entity;
 import javax.persistence.*;
 import java.util.Objects;
 
+/**
+ * @author 10248
+ */
 @Entity
 @Table(name = "t_dish", schema = "zy_rims")
 public class TableDishEntity {
@@ -11,6 +14,7 @@ public class TableDishEntity {
     private Double dishPrice;
     private String dishImgName;
     private String dishIntroduced;
+    private String dishClass;
 
     @Id
     @Column(name = "dish_id")
@@ -62,6 +66,16 @@ public class TableDishEntity {
         this.dishIntroduced = dishIntroduced;
     }
 
+    @Basic
+    @Column(name = "dish_class")
+    public String getDishClass() {
+        return dishClass;
+    }
+
+    public void setDishClass(String dishClass) {
+        this.dishClass = dishClass;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -75,11 +89,12 @@ public class TableDishEntity {
                 Objects.equals(dishName, that.dishName) &&
                 Objects.equals(dishPrice, that.dishPrice) &&
                 Objects.equals(dishImgName, that.dishImgName) &&
-                Objects.equals(dishIntroduced, that.dishIntroduced);
+                Objects.equals(dishIntroduced, that.dishIntroduced) &&
+                Objects.equals(dishClass, that.dishClass);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(dishId, dishName, dishPrice, dishImgName, dishIntroduced);
+        return Objects.hash(dishId, dishName, dishPrice, dishImgName, dishIntroduced, dishClass);
     }
 }

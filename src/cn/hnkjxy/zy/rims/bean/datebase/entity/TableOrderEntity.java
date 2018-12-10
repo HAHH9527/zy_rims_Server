@@ -4,8 +4,14 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Objects;
 
+/**
+ * @author 10248
+ */
 @Entity
 @Table(name = "t_order", schema = "zy_rims")
+@org.hibernate.annotations.Entity(
+        dynamicInsert = true
+)
 public class TableOrderEntity {
     private int orderId;
     private String tableId;

@@ -4,7 +4,8 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="cn.hnkjxy.zy.rims.bean.datebase.entity.TableOrderEntity" table="t_order" schema="zy_rims">
+    <class name="cn.hnkjxy.zy.rims.bean.datebase.entity.TableOrderEntity" table="t_order" schema="zy_rims"
+           dynamic-insert="true" dynamic-update="true">
         <id name="orderId" column="order_id">
             <generator class="identity"/>
         </id>
