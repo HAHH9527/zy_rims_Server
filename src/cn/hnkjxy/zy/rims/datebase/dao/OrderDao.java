@@ -80,4 +80,17 @@ public class OrderDao extends HibernateUtils implements OrderImpl {
 
         return list;
     }
+
+    @Override
+    public List<TableOrderEntity> getHistoryOrderList() {
+        List<TableOrderEntity> list;
+
+        initHibernate();
+
+        Query<TableOrderEntity> query = session.createQuery("from TableOrderEntity");
+        list = query.list();
+        closeFinally();
+
+        return list;
+    }
 }

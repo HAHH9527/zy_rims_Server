@@ -39,4 +39,11 @@ public interface OrderImpl {
      * @return 未完成订单list
      */
     List<TableOrderEntity> getWaitingOrderList();
+
+    /**
+     * 查找历史订单
+     *
+     * @return 历史订单list
+     */
+    List<TableOrderEntity> getHistoryOrderList();
 }
