@@ -20,12 +20,16 @@ public class BeanTransformUtils {
      * @return 处理完的TableDishEntity
      */
     public static TableDishEntity tableDishAndBase64ImageDeleteBase64(TableDishAndBase64Image tableDishAndBase64Image) {
-        TableDishEntity tableDishEntity = new TableDishEntity();
-        tableDishEntity.setDishId(tableDishAndBase64Image.getDishId());
-        tableDishEntity.setDishName(tableDishAndBase64Image.getDishName());
-        tableDishEntity.setDishPrice(tableDishAndBase64Image.getDishPrice());
-        tableDishEntity.setDishImgName(tableDishAndBase64Image.getDishImgName());
-        tableDishEntity.setDishIntroduced(tableDishAndBase64Image.getDishIntroduced());
+        TableDishEntity tableDishEntity = null;
+        if (tableDishAndBase64Image != null) {
+            tableDishEntity = new TableDishEntity();
+            tableDishEntity.setDishId(tableDishAndBase64Image.getDishId());
+            tableDishEntity.setDishName(tableDishAndBase64Image.getDishName());
+            tableDishEntity.setDishPrice(tableDishAndBase64Image.getDishPrice());
+            tableDishEntity.setDishImgName(tableDishAndBase64Image.getDishImgName());
+            tableDishEntity.setDishIntroduced(tableDishAndBase64Image.getDishIntroduced());
+            tableDishEntity.setDishClass(tableDishAndBase64Image.getDishClass());
+        }
 
         return tableDishEntity;
     }
@@ -66,6 +70,7 @@ public class BeanTransformUtils {
             tableDishAndBase64Image.setDishPrice(tableDishEntity.getDishPrice());
             tableDishAndBase64Image.setDishIntroduced(tableDishEntity.getDishIntroduced());
             tableDishAndBase64Image.setDishImgName(tableDishEntity.getDishImgName());
+            tableDishAndBase64Image.setDishClass(tableDishEntity.getDishClass());
             if (tableDishEntity.getDishImgName() != null) {
                 tableDishAndBase64Image.setDishImgBase64Str(ImageBase64Utils.base64ImageReadByLocal(tableDishEntity.getDishImgName()));
             }
