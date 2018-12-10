@@ -9,14 +9,13 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * 管理菜单工具类
- *
  * @author 10248
  */
 public class MenuMangerUtils {
     private static List<TableDishEntity> tableDishEntityList;
     private static List<TableDishAndBase64Image> menuAndBase64List;
     private static String menuJson;
+    private static String menuJsonAndImg;
 
     /**
      * 添加菜品
@@ -105,14 +104,16 @@ public class MenuMangerUtils {
      * 更新菜单数据进入内存中
      */
     public static void updateMenu() {
-        //第一步,从数据库读取数据
+        //从数据库读取数据
         tableDishEntityList = new DishDao().getMenu();
-        //第二步,将实体类进行转换,添加图片数据
+        //将实体类转换成json数据
+        menuJson = new Gson().toJson(tableDishEntityList);
+        //将实体类进行转换,添加图片数据
         if (tableDishEntityList != null && tableDishEntityList.size() > 0) {
             menuAndBase64List = BeanTransformUtils.menuListAddImageBase64(tableDishEntityList);
         }
-        //第三步,将图片实体类转换成json数据
-        menuJson = new Gson().toJson(menuAndBase64List);
+        //将图片实体类转换成json数据
+        menuJsonAndImg = new Gson().toJson(menuAndBase64List);
         setDishPriceMap();
     }
 
@@ -128,6 +129,9 @@ public class MenuMangerUtils {
         return menuJson;
     }
 
+    public static String getMenuJsonAndImg() {
+        return menuJsonAndImg;
+    }
 }
 
 
