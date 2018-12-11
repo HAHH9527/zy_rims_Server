@@ -1,20 +1,25 @@
 package cn.hnkjxy.zy.rims.utils;
 
 import cn.hnkjxy.zy.rims.bean.datebase.entity.TableOrderEntity;
+import cn.hnkjxy.zy.rims.bean.json.CheckOrderJson;
 import cn.hnkjxy.zy.rims.bean.json.DishListJson;
 import cn.hnkjxy.zy.rims.datebase.dao.OrderDao;
 import com.google.gson.Gson;
 
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 /**
  * @author 10248
  */
 public class OrderMangerUtils {
     private static List<TableOrderEntity> waitingOrderList;
-    private static Map<Integer, Double> dishPriceMap;
+    private static List<TableOrderEntity> historyOrderList;
+    private static Map<Integer, TableOrderEntity> waitingOrderMap;
     private static String waitingOrderListJson;
+    private static String historyOrderListJson;
 
     /**
      * 新建订单
@@ -25,10 +30,10 @@ public class OrderMangerUtils {
     public static int newOrder(TableOrderEntity tableOrderEntity) {
         int ret;
 
-        calculateOrder(tableOrderEntity);
+//        calculateOrder(tableOrderEntity);
         ret = new OrderDao().insertNewOrder(tableOrderEntity);
 
-        updateWaitingOrderList();
+        updateOrderList();
 
         return ret;
     }
@@ -42,42 +47,62 @@ public class OrderMangerUtils {
     public static boolean updateOrder(TableOrderEntity tableOrderEntity) {
         boolean ret;
 
-        calculateOrder(tableOrderEntity);
+//        calculateOrder(tableOrderEntity);
         if (tableOrderEntity.getOrderPrice() != null && tableOrderEntity.getOrderDiscount() != null) {
             tableOrderEntity.setOrderPriceReal(tableOrderEntity.getOrderPrice() * tableOrderEntity.getOrderDiscount());
         }
 
         ret = new OrderDao().updateOrder(tableOrderEntity);
 
-        updateWaitingOrderList();
+        updateOrderList();
 
         return ret;
     }
 
+    public static String getOrderToCheck(int orderId) {
+        CheckOrderJson checkOrderJson = new CheckOrderJson();
+        checkOrderJson.setTableOrderEntity(waitingOrderMap.get(orderId));
+
+        DishListJson dishIdListJson = new Gson().fromJson(checkOrderJson.getDishList(), DishListJson.class);
+
+        dishIdListJson.getDishList().forEach(i -> checkOrderJson.addList(MenuMangerUtils.getDishMap().get(i)));
+
+        return new Gson().toJson(checkOrderJson);
+    }
+
     /**
-     * 计算订单总价和折扣后价格
-     * @param tableOrderEntity 需要计算的订单
+     * 更新订单
      */
-    public static void calculateOrder(TableOrderEntity tableOrderEntity) {
-        List<Integer> dishList = new Gson().fromJson(tableOrderEntity.getDishList(), DishListJson.class).getDishList();
-        tableOrderEntity.setOrderPrice(dishList.stream().mapToDouble(id -> dishPriceMap.get(id)).sum());
-        tableOrderEntity.setOrderPriceReal(tableOrderEntity.getOrderPrice()
-                * tableOrderEntity.getOrderDiscount() == 0 ? 1 : tableOrderEntity.getOrderDiscount());
+    public static void updateOrderList() {
+        updateWaitingOrderList();
+        updateHistoryOrderList();
     }
 
     /**
      * 更新未完成订单
      */
-    public static void updateWaitingOrderList() {
+    private static void updateWaitingOrderList() {
         waitingOrderList = new OrderDao().getWaitingOrderList();
         waitingOrderListJson = new Gson().toJson(waitingOrderList);
+
+        waitingOrderMap = waitingOrderList.stream().collect(
+                Collectors.toMap(TableOrderEntity::getOrderId, Function.identity(), (oldValue, newValue) -> newValue)
+        );
     }
 
-    public static void setDishPriceMap(Map<Integer, Double> dishPriceMap) {
-        OrderMangerUtils.dishPriceMap = dishPriceMap;
+    /**
+     * 更新历史订单
+     */
+    private static void updateHistoryOrderList() {
+        historyOrderList = new OrderDao().getHistoryOrderList();
+        historyOrderListJson = new Gson().toJson(historyOrderList);
     }
 
     public static String getWaitingOrderListJson() {
         return waitingOrderListJson;
+    }
+
+    public static String getHistoryOrderListJson() {
+        return historyOrderListJson;
     }
 }

@@ -87,7 +87,8 @@ public class OrderDao extends HibernateUtils implements OrderImpl {
 
         initHibernate();
 
-        Query<TableOrderEntity> query = session.createQuery("from TableOrderEntity");
+        Query<TableOrderEntity> query = session.createQuery("from TableOrderEntity where orderStatus = :orderStatus");
+        query.setParameter("orderStatus", "check");
         list = query.list();
         closeFinally();
 

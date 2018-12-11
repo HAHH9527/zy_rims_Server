@@ -6,6 +6,8 @@ import cn.hnkjxy.zy.rims.datebase.dao.DishDao;
 import com.google.gson.Gson;
 
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
@@ -14,6 +16,7 @@ import java.util.stream.Collectors;
 public class MenuMangerUtils {
     private static List<TableDishEntity> tableDishEntityList;
     private static List<TableDishAndBase64Image> menuAndBase64List;
+    private static Map<Integer, TableDishEntity> dishMap;
     private static String menuJson;
     private static String menuJsonAndImg;
 
@@ -114,15 +117,20 @@ public class MenuMangerUtils {
         }
         //将图片实体类转换成json数据
         menuJsonAndImg = new Gson().toJson(menuAndBase64List);
-        setDishPriceMap();
+        setDishMap();
     }
 
-    public static void setDishPriceMap() {
-        OrderMangerUtils.setDishPriceMap(
-                tableDishEntityList.stream().collect(
-                        Collectors.toMap(TableDishEntity::getDishId, TableDishEntity::getDishPrice, (oldValue, newValue) -> newValue)
-                )
+    /**
+     * 将菜单List转换成Map<Id,Dish>
+     */
+    private static void setDishMap() {
+        dishMap = tableDishEntityList.stream().collect(
+                Collectors.toMap(TableDishEntity::getDishId, Function.identity(), (oldValue, newValue) -> newValue)
         );
+    }
+
+    public static Map<Integer, TableDishEntity> getDishMap() {
+        return dishMap;
     }
 
     public static String getMenuJson() {
