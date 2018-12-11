@@ -5,7 +5,6 @@ import cn.hnkjxy.zy.rims.utils.OrderMangerUtils;
 import com.google.gson.Gson;
 import org.apache.commons.io.IOUtils;
 
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -20,7 +19,7 @@ import java.io.PrintWriter;
 @WebServlet(name = "OrderServlet", urlPatterns = "/Order")
 public class OrderServlet extends HttpServlet {
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         // 设置响应内容类型
         response.setContentType("text/html;charset=utf-8");
         request.setCharacterEncoding("utf-8");
@@ -56,8 +55,6 @@ public class OrderServlet extends HttpServlet {
         response.setContentType("text/html;charset=utf-8");
         request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
-
-        System.out.println("收到GetMenu请求");
 
         PrintWriter out = response.getWriter();
 
