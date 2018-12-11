@@ -35,7 +35,11 @@ public class OrderServlet extends HttpServlet {
 
         //判断是更新还是新增
         if (tableOrderEntity.getOrderId() > 0) {
-
+            if (OrderMangerUtils.updateOrder(tableOrderEntity)) {
+                out.write("更新订单成功");
+            } else {
+                out.write("更新订单失败");
+            }
         } else {
             int orderId = OrderMangerUtils.newOrder(tableOrderEntity);
             if (orderId != -1) {
@@ -47,7 +51,7 @@ public class OrderServlet extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         // 设置响应内容类型
         response.setContentType("text/html;charset=utf-8");
         request.setCharacterEncoding("utf-8");
@@ -57,6 +61,18 @@ public class OrderServlet extends HttpServlet {
 
         PrintWriter out = response.getWriter();
 
-        out.print(OrderMangerUtils.getWaitingOrderListJson());
+        try {
+            String what = request.getParameter("what");
+            String history = "history";
+            if (what.toLowerCase().equals(history)) {
+                out.print(OrderMangerUtils.getHistoryOrderListJson());
+            } else {
+                out.print(OrderMangerUtils.getWaitingOrderListJson());
+            }
+        } catch (NullPointerException e) {
+            out.print(OrderMangerUtils.getWaitingOrderListJson());
+        }
+
     }
+
 }

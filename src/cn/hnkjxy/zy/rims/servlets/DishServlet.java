@@ -76,8 +76,6 @@ public class DishServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
 
-        System.out.println("收到GetMenu请求");
-
         PrintWriter out = response.getWriter();
 
         out.print(MenuMangerUtils.getMenuJson());

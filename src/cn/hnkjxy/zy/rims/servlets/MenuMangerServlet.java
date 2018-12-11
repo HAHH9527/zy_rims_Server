@@ -2,7 +2,6 @@ package cn.hnkjxy.zy.rims.servlets;
 
 import cn.hnkjxy.zy.rims.utils.MenuMangerUtils;
 
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -35,4 +34,5 @@ public class MenuMangerServlet extends HttpServlet {
 
         out.write("刷新成功");
     }
+
 }

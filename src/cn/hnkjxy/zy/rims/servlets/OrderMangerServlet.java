@@ -18,7 +18,7 @@ public class OrderMangerServlet extends HttpServlet {
     @Override
     public void init() {
         System.out.println("init OrderMangerServlet");
-        OrderMangerUtils.updateWaitingOrderList();
+        OrderMangerUtils.updateOrderList();
     }
 
     @Override
@@ -27,12 +27,11 @@ public class OrderMangerServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
 
-        OrderMangerUtils.updateWaitingOrderList();
+        OrderMangerUtils.updateOrderList();
 
         PrintWriter out = response.getWriter();
 
         out.write("刷新成功");
     }
-
 
 }

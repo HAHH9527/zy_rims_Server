@@ -9,9 +9,6 @@ import java.util.Objects;
  */
 @Entity
 @Table(name = "t_order", schema = "zy_rims")
-@org.hibernate.annotations.Entity(
-        dynamicInsert = true
-)
 public class TableOrderEntity {
     private int orderId;
     private String tableId;
