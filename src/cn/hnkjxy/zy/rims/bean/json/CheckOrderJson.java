@@ -6,6 +6,9 @@ import cn.hnkjxy.zy.rims.bean.datebase.entity.TableOrderEntity;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author 10248
+ */
 public class CheckOrderJson extends TableOrderEntity {
     private List<TableDishEntity> list = new ArrayList<TableDishEntity>();
 
@@ -22,6 +25,11 @@ public class CheckOrderJson extends TableOrderEntity {
         this.setOrderOther(tableOrderEntity.getOrderOther());
     }
 
+    /**
+     * 往菜单列表中添加菜品
+     *
+     * @param tableDishEntity 添加的菜品
+     */
     public void addList(TableDishEntity tableDishEntity) {
         list.add(tableDishEntity);
     }
@@ -30,7 +38,4 @@ public class CheckOrderJson extends TableOrderEntity {
         return list;
     }
 
-    public void setList(List<TableDishEntity> list) {
-        this.list = list;
-    }
 }
