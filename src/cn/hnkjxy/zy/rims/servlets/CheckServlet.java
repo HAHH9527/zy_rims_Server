@@ -27,9 +27,21 @@ public class CheckServlet extends HttpServlet {
 
         InputStream inputStream = request.getInputStream();
         String body = IOUtils.toString(inputStream, "utf-8");
+        System.out.println(body);
 
-        TableOrderEntity tableOrderEntity = new Gson().fromJson(body, TableOrderEntity.class);
-        OrderMangerUtils.updateOrder(tableOrderEntity);
+        PrintWriter out = response.getWriter();
+
+        try {
+            TableOrderEntity tableOrderEntity = new Gson().fromJson(body, TableOrderEntity.class);
+            if (OrderMangerUtils.checkOrder(tableOrderEntity)) {
+                out.write("true");
+            } else {
+                out.write("false");
+            }
+        } catch (Exception e) {
+            out.write("false");
+            e.printStackTrace();
+        }
     }
 
     @Override

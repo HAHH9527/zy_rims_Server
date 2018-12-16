@@ -34,6 +34,16 @@ public interface OrderImpl {
     boolean updateOrder(TableOrderEntity updateOrder);
 
     /**
+     * 结算此订单
+     * 因默认的全部更新会更新到其他字段
+     * 所以新写一个方法
+     *
+     * @param checkOrder 结算的订单
+     * @return 结算是否成功
+     */
+    boolean checkOrder(TableOrderEntity checkOrder);
+
+    /**
      * 查找所有未完成订单
      *
      * @return 未完成订单list

@@ -38,6 +38,16 @@ public class OrderMangerUtils {
         return ret;
     }
 
+    public static boolean checkOrder(TableOrderEntity tableOrderEntity) {
+        boolean ret;
+
+        ret = new OrderDao().updateOrder(tableOrderEntity);
+
+        updateOrderList();
+
+        return ret;
+    }
+
     /**
      * 更新订单信息
      *
@@ -47,11 +57,6 @@ public class OrderMangerUtils {
     public static boolean updateOrder(TableOrderEntity tableOrderEntity) {
         boolean ret;
 
-//        calculateOrder(tableOrderEntity);
-        if (tableOrderEntity.getOrderPrice() != null && tableOrderEntity.getOrderDiscount() != null) {
-            tableOrderEntity.setOrderPriceReal(tableOrderEntity.getOrderPrice() * tableOrderEntity.getOrderDiscount());
-        }
-
         ret = new OrderDao().updateOrder(tableOrderEntity);
 
         updateOrderList();
@@ -59,6 +64,12 @@ public class OrderMangerUtils {
         return ret;
     }
 
+    /**
+     * 获得需要结算的订单
+     *
+     * @param orderId
+     * @return
+     */
     public static String getOrderToCheck(int orderId) {
         CheckOrderJson checkOrderJson = new CheckOrderJson();
         checkOrderJson.setTableOrderEntity(waitingOrderMap.get(orderId));
@@ -71,7 +82,7 @@ public class OrderMangerUtils {
     }
 
     /**
-     * 更新订单
+     * 更新订单缓存
      */
     public static void updateOrderList() {
         updateWaitingOrderList();
