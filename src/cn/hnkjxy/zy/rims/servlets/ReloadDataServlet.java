@@ -1,5 +1,6 @@
 package cn.hnkjxy.zy.rims.servlets;
 
+import cn.hnkjxy.zy.rims.utils.MenuMangerUtils;
 import cn.hnkjxy.zy.rims.utils.OrderMangerUtils;
 
 import javax.servlet.annotation.WebServlet;
@@ -12,13 +13,14 @@ import java.io.PrintWriter;
 /**
  * @author 10248
  */
-@WebServlet(name = "OrderMangerServlet", urlPatterns = "/OrderManger", loadOnStartup = 0)
-public class OrderMangerServlet extends HttpServlet {
+@WebServlet(name = "ReloadDataServlet", urlPatterns = "/ReloadData", loadOnStartup = 0)
+public class ReloadDataServlet extends HttpServlet {
 
     @Override
     public void init() {
-        System.out.println("init OrderMangerServlet");
+        MenuMangerUtils.updateMenu();
         OrderMangerUtils.updateOrderList();
+        System.out.println("init Data");
     }
 
     @Override
@@ -27,11 +29,13 @@ public class OrderMangerServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
 
+        System.out.println("ReloadData");
+
+        MenuMangerUtils.updateMenu();
         OrderMangerUtils.updateOrderList();
 
         PrintWriter out = response.getWriter();
-
         out.write("刷新成功");
-    }
 
+    }
 }
