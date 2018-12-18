@@ -30,7 +30,6 @@ public class OrderMangerUtils {
     public static int newOrder(TableOrderEntity tableOrderEntity) {
         int ret;
 
-//        calculateOrder(tableOrderEntity);
         ret = new OrderDao().insertNewOrder(tableOrderEntity);
 
         updateOrderList();
@@ -38,10 +37,16 @@ public class OrderMangerUtils {
         return ret;
     }
 
+    /**
+     * 结算订单
+     *
+     * @param tableOrderEntity 需要结算的订单
+     * @return 结算是否成果
+     */
     public static boolean checkOrder(TableOrderEntity tableOrderEntity) {
         boolean ret;
 
-        ret = new OrderDao().updateOrder(tableOrderEntity);
+        ret = new OrderDao().checkOrder(tableOrderEntity);
 
         updateOrderList();
 

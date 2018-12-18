@@ -98,6 +98,7 @@ public class MenuMangerUtils {
      * @return 删除成功或者失败
      */
     public static boolean deleteDish(int dishId) {
+        //删除菜品
         boolean ret = new DishDao().deleteDishById(dishId);
         updateMenu();
         return ret;
